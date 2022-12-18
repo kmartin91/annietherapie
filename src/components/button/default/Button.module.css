@@ -1,0 +1,59 @@
+.btn {
+    border-radius: 48px;
+    padding: 12px 24px;
+    background-color: var(--white);
+    border: none;
+    color: var(--primary-color);
+    font-size: var(--font-size-base);
+    width: 100%;
+    cursor: pointer;
+    transition: .7s background-color ease-out, .2s color ease-out;
+    height: max-content;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.btn::after {
+    position: absolute;
+    background-color: var(--primary-color);
+    color: var(--white);
+    content: "";
+    height: calc(100% - 22px);
+    width: 110%;
+    border-radius: 48px;
+    padding: 12px 24px;
+    top: 0;
+    translate: 0 100%;
+    z-index: -1;
+    transform-origin: bottom left;
+    transition: .2s all ease-out;
+}
+
+.btn:hover {
+    color: var(--white);
+    background-color: var(--primary-color);
+}
+
+.btn:hover::after {
+    translate: 0 0;
+}
+
+
+.alternate {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.alternate::after {
+    background-color: var(--white);
+}
+
+.alternate:hover {
+    color: var(--primary-color);
+    background-color: var(--white);
+}
