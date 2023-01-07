@@ -1,26 +1,47 @@
 import { Cormorant_Garamond } from "@next/font/google";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 
-import Button from "../button/default/Button";
+import Button from "components/button/default/Button";
+import styles from "components/header/header.module.css";
 
-import styles from "./Header.module.css";
+interface HeaderProps {
+  isLandingPage?: boolean;
+}
 
 const cormorant = Cormorant_Garamond({
   weight: "300",
   subsets: ["latin"],
 });
 
-export default function Header() {
+const Header: React.FC<HeaderProps> = ({
+  isLandingPage,
+}: HeaderProps): ReactElement => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const router = useRouter();
   const getLinkClass = (path: string) =>
     `${styles.link} ${router.pathname === path ? `${styles.activeLink}` : ""}`;
 
+  const mobileMenuClassName = [
+    cormorant.className,
+    styles.mobileMenu,
+    isOpenMenu && styles.mobileMenuOpen,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  const headerClassName = [
+    cormorant.className,
+    styles.header,
+    isLandingPage && styles.headerLanding,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
     <>
-      <header className={`${cormorant.className} ${styles.header}`}>
+      <header className={headerClassName}>
         <h2 className={styles.title}>Annie MAQUET - Psychopraticienne</h2>
         <nav className={`${cormorant.className} ${styles.nav}`}>
           <ul className={styles.list}>
@@ -51,11 +72,7 @@ export default function Header() {
           onClick={() => setIsOpenMenu(true)}
         />
       </header>
-      <div
-        className={`${cormorant.className} ${styles.mobileMenu} ${
-          isOpenMenu && styles.mobileMenuOpen
-        }`}
-      >
+      <div className={mobileMenuClassName}>
         <h2 className={styles.title}>Annie MAQUET - Psychopraticienne</h2>
 
         <div
@@ -89,4 +106,6 @@ export default function Header() {
       </div>
     </>
   );
-}
+};
+
+export default Header;

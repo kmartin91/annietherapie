@@ -1,0 +1,6 @@
+.container {
+    position: relative;
+    height: clamp(200px, 15vw, 400px);
+    width: clamp(200px, 15vw, 400px);
+    z-index: 1;
+}

@@ -1,9 +1,10 @@
 :root {
   --max-width: 1100px;
   --primary-color: hsla(186,98%,19%,1);
-  --primary-color-bak: hsla(186,94.94%,30.98%,1);
   --secondary-color: 	hsla(0, 0%, 93%, 1);
   --white: hsla(0,0%,100%,1);
+  --primary-color-black: hsla(0, 0%, 9%, 1);
+  --black: hsla(0,0%,0%,1);
   --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
   --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
   --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
@@ -11,12 +12,6 @@
   --font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
   --font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
   --font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-
-  }
 }
 
 * {

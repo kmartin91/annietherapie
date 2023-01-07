@@ -1,0 +1,26 @@
+.section {
+    background-color: var(--white);
+    color: var(--primary-color);
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+    gap: 16px;
+}
+
+.main > h2 {
+    font-size: var(--font-size-md);
+}
+
+@media (prefers-color-scheme: dark) {
+    .section:first-child {
+      background-color: var(--primary-color-black);
+      color: var(--white);
+    }
+  }
+  

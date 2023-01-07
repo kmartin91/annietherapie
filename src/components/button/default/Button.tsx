@@ -1,8 +1,8 @@
 import { Cormorant_Garamond } from "@next/font/google";
 import Link from "next/link";
-import React from "react";
+import React, { ReactElement } from "react";
 
-import styles from "./Button.module.css";
+import styles from "components/button/default/button.module.css";
 
 const cormorant = Cormorant_Garamond({
   weight: "300",
@@ -12,12 +12,43 @@ const cormorant = Cormorant_Garamond({
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   className?: string;
-  href: string;
+  href?: string;
   alternate?: boolean;
+  useButtonMarkup?: boolean;
+  type?: "button" | "submit" | "reset";
+  // All other props
+  [x: string]: any;
 }
 
-const Button = (props: ButtonProps) => {
-  const { children, className, alternate, href } = props;
+const Button: React.FC<ButtonProps> = ({
+  children,
+  className,
+  alternate,
+  href,
+  useButtonMarkup = false,
+  type,
+  ...rest
+}: ButtonProps): ReactElement => {
+  if (useButtonMarkup) {
+    return (
+      <button
+        className={[
+          styles.btn,
+          className,
+          cormorant.className,
+          alternate && styles.alternate,
+        ]
+          .filter(Boolean)
+          .join(" ")}
+        type={type}
+        {...rest}
+      >
+        {children}
+      </button>
+    );
+  }
+
+  if (!href) return <></>;
   return (
     <Link
       className={[
