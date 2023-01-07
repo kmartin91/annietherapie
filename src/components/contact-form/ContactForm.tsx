@@ -51,12 +51,6 @@ const ContactForm: React.FC = (): ReactElement => {
     resolver: yupResolver(schema) as Resolver<FormData>,
   });
 
-  const onLoad = () => {
-    if (captchaRef.current) {
-      captchaRef.current.execute();
-    }
-  };
-
   const onSubmit = () => {
     if (
       process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID &&
@@ -83,42 +77,70 @@ const ContactForm: React.FC = (): ReactElement => {
   };
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
-      <div className={styles.formItem}>
-        <label>Nom</label>
-        <input {...register("name")} />
-        {errors.name && <p className={styles.error}>{errors.name.message}</p>}
-      </div>
-      <div className={styles.formItem}>
-        <label>Numéro de téléphone</label>
-        <input type="phone" {...register("phone")} />
-        {errors.phone && <p className={styles.error}>{errors.phone.message}</p>}
-      </div>
+    <>
+      {!formSent ? (
+        <>
+          {formSentError && (
+            <p className={styles.error}>
+              Une erreur est survenue, veuillez renseigner le formulaire à
+              nouveau
+            </p>
+          )}
+          <form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
+            <div className={styles.formItem}>
+              <label>Nom</label>
+              <input {...register("name")} />
+              {errors.name && (
+                <p className={styles.error}>{errors.name.message}</p>
+              )}
+            </div>
+            <div className={styles.formItem}>
+              <label>Numéro de téléphone</label>
+              <input type="phone" {...register("phone")} />
+              {errors.phone && (
+                <p className={styles.error}>{errors.phone.message}</p>
+              )}
+            </div>
 
-      <div className={styles.formItem}>
-        <label>Email</label>
-        <input type="email" {...register("email")} />
-        {errors.email && <p className={styles.error}>{errors.email.message}</p>}
-      </div>
-      <div className={styles.formItem}>
-        <label>Message</label>
-        <textarea {...register("message")} />
-        {errors.message && (
-          <p className={styles.error}>{errors.message.message}</p>
-        )}
-      </div>
-      {process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY && (
-        <HCaptcha
-          sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY}
-          onLoad={onLoad}
-          onVerify={setToken}
-          ref={captchaRef}
-        />
+            <div className={styles.formItem}>
+              <label>Email</label>
+              <input type="email" {...register("email")} />
+              {errors.email && (
+                <p className={styles.error}>{errors.email.message}</p>
+              )}
+            </div>
+            <div className={styles.formItem}>
+              <label>Message</label>
+              <textarea {...register("message")} />
+              {errors.message && (
+                <p className={styles.error}>{errors.message.message}</p>
+              )}
+            </div>
+            {process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY && (
+              <div className={styles.hcaptcha}>
+                <HCaptcha
+                  sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY}
+                  onVerify={setToken}
+                  ref={captchaRef}
+                />
+              </div>
+            )}
+            <Button useButtonMarkup type="submit" disabled={!token}>
+              Submit
+            </Button>
+          </form>
+        </>
+      ) : (
+        <>
+          {formSent && (
+            <p className={styles.success}>
+              Votre message a bien été envoyé, j&apos;y réponderai dans les plus
+              bref délais
+            </p>
+          )}
+        </>
       )}
-      <Button useButtonMarkup type="submit" disabled={!token}>
-        Submit
-      </Button>
-    </form>
+    </>
   );
 };
 

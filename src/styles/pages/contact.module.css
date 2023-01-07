@@ -17,6 +17,10 @@
     font-size: var(--font-size-md);
 }
 
+.phone {
+    font-size: var(--font-size-lg);
+}
+
 @media (prefers-color-scheme: dark) {
     .section:first-child {
       background-color: var(--primary-color-black);

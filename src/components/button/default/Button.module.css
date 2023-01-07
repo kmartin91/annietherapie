@@ -43,6 +43,9 @@
     translate: 0 0;
 }
 
+.btn:disabled {
+    opacity: 0.4
+}
 
 .alternate {
     background-color: var(--primary-color);

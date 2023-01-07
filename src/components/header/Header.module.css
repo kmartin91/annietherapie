@@ -25,13 +25,18 @@ body:has(.mobileMenuOpen) > div > div {
   color: var(--white);
 }
 
+.headerLanding > .burgerIcon,
+.headerLanding > .burgerIcon:before{
+    background-color: var(--white);
+}
+
 .burgerIcon {
   display: none;
   position: absolute;
   height: 3px;
   width: 30px;
   cursor: pointer;
-  background-color: var(--white);
+  background-color: var(--primary-color);
   border-radius: 2px;
   right: 16px;
   top: 20px;
@@ -45,16 +50,18 @@ body:has(.mobileMenuOpen) > div > div {
   width: 30px;
   left: 0;
   top: -8px;
-  background-color: var(--white);
+  background-color: var(--primary-color);
   border-radius: 2px;
   transition: all ease-in-out 0.5s;
 }
 
 .burgerIconClose {
+  background-color: var(--white);
   rotate: -45deg;
 }
 
 .burgerIconClose::before {
+  background-color: var(--white);
   rotate: 90deg;
   top: 0;
 }
@@ -95,11 +102,12 @@ body:has(.mobileMenuOpen) > div > div {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: var(--white);
 }
 
 .mobileMenu > .buttonContainer {
   position: absolute;
-  bottom: 10vw;
+  bottom: 20vw;
   display: block;
   left: 50%;
   transform: translateX(-50%);
@@ -197,10 +205,20 @@ body:has(.mobileMenuOpen) > div > div {
   .mobileMenuOpen {
     clip-path: circle(100%);
   }
+
+  .mobileMenu > .title {
+    color: var(--white);
+  }
+
 }
 
 @media (prefers-color-scheme: dark) {
   .header {
     color: var(--white);
+  }
+
+  .burgerIcon,
+  .burgerIcon::before {
+    background-color: var(--white);
   }
 }
