@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { ReactElement, useState } from "react";
 
 import Button from "components/button/default/Button";
-import styles from "components/header/header.module.css";
+import styles from "components/header/Header.module.css";
 
 interface HeaderProps {
   isLandingPage?: boolean;

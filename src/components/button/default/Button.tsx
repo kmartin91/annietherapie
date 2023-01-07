@@ -2,7 +2,7 @@ import { Cormorant_Garamond } from "@next/font/google";
 import Link from "next/link";
 import React, { ReactElement } from "react";
 
-import styles from "components/button/default/button.module.css";
+import styles from "components/button/default/Button.module.css";
 
 const cormorant = Cormorant_Garamond({
   weight: "300",
