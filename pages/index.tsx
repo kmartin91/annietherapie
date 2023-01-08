@@ -8,7 +8,6 @@ import Conclusion from "images/conclusion.jpeg";
 
 import Landing from "sections/landing/Landing";
 import Content from "sections/content/Content";
-import Footer from "sections/Footer/Footer";
 
 import styles from "styles/pages/home.module.css";
 import commonStyles from "sections/common/section.module.css";
