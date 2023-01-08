@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://psy-charente-maritime.fr/sitemap.xml
