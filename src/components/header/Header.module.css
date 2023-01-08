@@ -130,6 +130,7 @@ body:has(.mobileMenuOpen) > div > div {
 
 .nav {
   flex: 0 0 auto;
+  margin-top: 24px;
 }
 
 .list {
@@ -138,8 +139,14 @@ body:has(.mobileMenuOpen) > div > div {
   list-style: none;
 }
 
+.list > li {
+  min-width: 48px;
+  min-height: 48px;
+}
+
 .link {
   position: relative;
+  min-height: 48px;
 }
 
 .link::after {
