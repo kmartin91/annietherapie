@@ -31,7 +31,7 @@ export default function Contact() {
           <Header />
 
           <main className={styles.main}>
-            <h2>Contact</h2>
+            <h2>Demande de rendez-vous</h2>
             <p className={styles.phone}>
               <a href="tel:0695347631">Téléphone: 06.95.34.76.31</a>
             </p>

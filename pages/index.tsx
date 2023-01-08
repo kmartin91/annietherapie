@@ -1,5 +1,6 @@
 import { Cormorant_Garamond } from "@next/font/google";
 import Head from "next/head";
+import Link from "next/link";
 
 import Girl from "images/girl-beach.jpeg";
 import Annie from "images/annie.jpeg";
@@ -39,11 +40,11 @@ export default function Home() {
             alt: "Annie MAQUET - Psychopraticienne / Gestalt Thérapie",
           }}
           id="gestalt"
-          nextId="#seance"
-          nextButtonLabel="Déroulement d'une séance"
+          nextId="#pourquoi"
+          nextButtonLabel="Pourquoi consulter ?"
           isAlternate
           isCenter
-          titleContent="La Gestalt Thérapie"
+          titleContent="Qu'est-ce que la Gestalt Thérapie ?"
         >
           <p className={commonStyles.text}>
             La Gestalt thérapie a été théorisée par le psychiatre et
@@ -61,28 +62,15 @@ export default function Home() {
         </Content>
         <Content
           image={{
-            src: Hands,
+            src: Conclusion,
             alt: "Annie MAQUET - Psychopraticienne / Gestalt Thérapie",
           }}
-          id="seance"
-          nextId="#conclusion"
-          nextButtonLabel="Suivant"
-          titleContent="Déroulement d'une séance"
-          hasBigContent
+          isCenter
+          titleContent="Pour quelles raisons consulter ?"
+          nextButtonLabel="Déroulement d'une séance"
+          nextId="#seance"
+          id="pourquoi"
         >
-          <p className={commonStyles.text}>
-            Suivre une psychothérapie, c’est s’engager pour soi même. Les
-            séances sont des rendez-vous avec vous même dans un espace de
-            liberté d&apos;expression où je vous accueille sans jugement et en
-            toute confidentialité et bienveillance. Ensemble nous co-créons une
-            alliance thérapeutique qui va soutenir votre évolution.
-          </p>
-          <p className={commonStyles.text}>
-            En séance j’utilise fréquemment des médias créatifs. Le corps lui
-            aussi est mis en mouvement, ce qui permet d’ancrer les expériences
-            plus profondément qu’en passant uniquement par le mental (la
-            parole).
-          </p>
           <p className={commonStyles.text}>
             Les clients viennent consulter pour des souffrances qui peuvent être
             psychiques et/ou psychosomatiques.
@@ -114,16 +102,29 @@ export default function Home() {
         </Content>
         <Content
           image={{
-            src: Conclusion,
+            src: Hands,
             alt: "Annie MAQUET - Psychopraticienne / Gestalt Thérapie",
           }}
+          id="seance"
           isAlternate
-          isCenter
-          titleContent=""
-          nextButtonLabel="Présentation"
           nextId="#presentation"
-          id="conclusion"
+          nextButtonLabel="Présentation"
+          titleContent="Déroulement d'une séance"
+          hasBigContent
         >
+          <p className={commonStyles.text}>
+            Suivre une psychothérapie, c’est s’engager pour soi même. Les
+            séances sont des rendez-vous avec vous même dans un espace de
+            liberté d&apos;expression où je vous accueille sans jugement et en
+            toute confidentialité et bienveillance. Ensemble nous co-créons une
+            alliance thérapeutique qui va soutenir votre évolution.
+          </p>
+          <p className={commonStyles.text}>
+            En séance j’utilise fréquemment des médias créatifs. Le corps lui
+            aussi est mis en mouvement, ce qui permet d’ancrer les expériences
+            plus profondément qu’en passant uniquement par le mental (la
+            parole).
+          </p>
           <p className={commonStyles.text}>
             Au fils des séances, nous cheminerons ensemble à travers les mots
             déposés, et les expérimentions, tout en considérant
@@ -136,6 +137,7 @@ export default function Home() {
             transcendée.
           </p>
         </Content>
+
         <Content
           image={{
             src: Annie,
@@ -168,7 +170,8 @@ export default function Home() {
           <p className={commonStyles.text}>
             Aujourd&apos;hui, j&apos;accompagne les jeunes adultes, adultes et
             seniors, en séance individuelle d&apos;une heure. Mon cabinet est
-            situé dans le pays Royannais.
+            situé dans{" "}
+            <Link href="/tarif-horaire/">le centre ville de Royan</Link>.
           </p>
           <p className={commonStyles.text}>
             Ma pratique est supervisée, ce qui me permet de garder un regard

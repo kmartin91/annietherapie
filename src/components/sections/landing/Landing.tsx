@@ -11,6 +11,8 @@ const Landing: React.FC = (): ReactElement => {
     const video = document.querySelector("video");
     if (video) {
       video.playbackRate = 0.7;
+      video.playsInline = true;
+      video.setAttribute("muted", "");
       video.play();
     }
   }, []);
@@ -24,7 +26,9 @@ const Landing: React.FC = (): ReactElement => {
       <Header isLandingPage />
 
       <main className={styles.main}>
-        <h1 className={styles.titleMain}>Gestalt Thérapie en Pays Royannais</h1>
+        <h1 className={styles.titleMain}>
+          Cabinet de Gestalt thérapie à Royan
+        </h1>
         <Button className={styles.buttonMain} href="#gestalt">
           En savoir plus
         </Button>
