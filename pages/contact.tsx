@@ -17,21 +17,16 @@ export default function Contact() {
     <>
       <Head>
         <title>
-          Annie MAQUET - Psychopraticienne / Gestalt Thérapie | Prise de
-          rendez-vous
+          Annie MAQUET - Psychopraticienne / Gestalt Thérapie | Contact
         </title>
-        <meta
-          name="description"
-          content="Annie MAQUET - Psychopraticienne / Gestalt Thérapie"
-        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="Cabinet de gestalt thérapie dans le centre ville de Royan, accompagnement et soutien via une thérapie psychocorporelle."
+          content="Prenez rendez-vous au cabinet de gestalt thérapie à Royan en ligne ou par téléphone. Grande plage horaire disponible."
         />
         <meta
           name="keywords"
-          content="gestalt,thérapie,royan,annie,maquet,gestalt thérapie,psychopraticien,psychopraticienne,psychothérapeute, psychocorporelle,psychothérapie,accompagnement,saujon,vaux-sur-mer,saint-palais-sur-mer,saint-augustin,saint-georges-de-didonne,étaules,le gua,les mathes"
+          content="gestalt,thérapie,royan,annie,maquet,gestalt thérapie,psychopraticien,psychopraticienne,psychothérapeute,psychocorporelle,psychothérapie,accompagnement,saujon,vaux-sur-mer,saint-palais-sur-mer,saint-augustin,saint-georges-de-didonne"
         />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="French" />
@@ -43,7 +38,7 @@ export default function Contact() {
           <Header />
 
           <main className={styles.main}>
-            <h2>Demande de rendez-vous</h2>
+            <h1>Demande de rendez-vous</h1>
             <h3>Consultation sur rendez-vous</h3>
             <p className={styles.phone}>
               <a href="tel:0695347631">

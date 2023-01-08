@@ -24,10 +24,6 @@ export default function Home() {
     <>
       <Head>
         <title>Annie MAQUET - Psychopraticienne / Gestalt Thérapie</title>
-        <meta
-          name="description"
-          content="Annie MAQUET - Psychopraticienne / Gestalt Thérapie"
-        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
@@ -35,7 +31,7 @@ export default function Home() {
         />
         <meta
           name="keywords"
-          content="gestalt,thérapie,royan,annie,maquet,gestalt thérapie,psychopraticien,psychopraticienne,psychothérapeute, psychocorporelle,psychothérapie,accompagnement,saujon,vaux-sur-mer,saint-palais-sur-mer,saint-augustin,saint-georges-de-didonne,étaules,le gua,les mathes"
+          content="gestalt,thérapie,royan,annie,maquet,gestalt thérapie,psychopraticien,psychopraticienne,psychothérapeute,psychocorporelle,psychothérapie,accompagnement,saujon,vaux-sur-mer,saint-palais-sur-mer,saint-augustin,saint-georges-de-didonne"
         />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="French" />
@@ -60,9 +56,10 @@ export default function Home() {
           <p className={commonStyles.text}>
             La Gestalt thérapie a été théorisée par le psychiatre et
             psychothérapeute Fritz Perls dans les années 50. C’est une thérapie
-            relationnelle, existentielle et holistique. Le terme allemand
-            « Gestalt», se traduit par forme, au sens de « prendre forme» :au
-            fils des séances, le client se sculpte, se construit, s’organise.
+            psychocorporelle, relationnelle, existentielle et holistique. Le
+            terme allemand « Gestalt», se traduit par forme, au sens de
+            « prendre forme» :au fils des séances, le client se sculpte, se
+            construit, s’organise.
           </p>
           <p className={commonStyles.text}>
             Cette psychothérapie porte un regard attentif sur la manière dont le
@@ -157,6 +154,8 @@ export default function Home() {
           titleContent="Présentation"
           id="presentation"
           hasBigContent
+          nextId="#landing"
+          nextButtonLabel="Revenir en haut"
         >
           <p className={commonStyles.text}>
             Fascinée par la complexité de l’être humain, tant par la mécanique

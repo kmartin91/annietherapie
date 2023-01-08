@@ -18,7 +18,7 @@ const Landing: React.FC = (): ReactElement => {
   }, []);
 
   return (
-    <section className={commonStyles.section}>
+    <section id="landing" className={commonStyles.section}>
       <video className={styles.landing} loop muted>
         <source src="/waves.mp4" />
       </video>

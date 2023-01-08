@@ -102,13 +102,13 @@ const Header: React.FC<HeaderProps> = ({
                 Informations pratiques
               </Link>
             </li>
+            <li className={styles.item}>
+              <Link href="/contact" className={getLinkClass("/contact")}>
+                Contact
+              </Link>
+            </li>
           </ul>
         </nav>
-        <div className={styles.buttonContainer}>
-          <Button className={styles.buttonHeader} href="/contact">
-            Contact
-          </Button>
-        </div>
       </div>
     </>
   );

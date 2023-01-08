@@ -1,4 +1,5 @@
 import { Cormorant_Garamond } from "@next/font/google";
+import { ReactElement } from "react";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 
@@ -14,7 +15,7 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-export default function Tarif() {
+const Tarif: React.FC = (): ReactElement => {
   const OpenStreetMap = dynamic(() => import("components/map/Map"), {
     ssr: false,
   });
@@ -25,18 +26,17 @@ export default function Tarif() {
   return (
     <>
       <Head>
-        <title>Annie MAQUET - Psychopraticienne / Gestalt Thérapie</title>
+        <title>
+          Annie MAQUET - Psychopraticienne / Gestalt Thérapie | Informations
+          Pratiques
+        </title>
         <meta
           name="description"
-          content="Annie MAQUET - Psychopraticienne / Gestalt Thérapie | Informations Pratiques"
-        />
-        <meta
-          name="description"
-          content="Cabinet de gestalt thérapie dans le centre ville de Royan, accompagnement et soutien via une thérapie psychocorporelle."
+          content="Trouvez nos horaires, tarifs, et informations de contact pour prendre rendez-vous au cabinet de gestalt thérapie à Royan."
         />
         <meta
           name="keywords"
-          content="gestalt,thérapie,royan,annie,maquet,gestalt thérapie,psychopraticien,psychopraticienne,psychothérapeute, psychocorporelle,psychothérapie,accompagnement,saujon,vaux-sur-mer,saint-palais-sur-mer,saint-augustin,saint-georges-de-didonne,étaules,le gua,les mathes "
+          content="gestalt,thérapie,royan,annie,maquet,gestalt thérapie,psychopraticien,psychopraticienne,psychothérapeute,psychocorporelle,psychothérapie,accompagnement,saujon,vaux-sur-mer,saint-palais-sur-mer,saint-augustin,saint-georges-de-didonne"
         />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="French" />
@@ -49,6 +49,7 @@ export default function Tarif() {
           <Header />
 
           <main className={styles.main}>
+            <h1>Informations pratiques</h1>
             <div className={styles.group}>
               <h2>Tarif</h2>
               <div className={styles.row}>
@@ -57,7 +58,7 @@ export default function Tarif() {
               </div>
             </div>
             <div className={styles.group}>
-              <h2>Horaire</h2>
+              <h2>Horaires</h2>
               {["lundi", "mardi", "mercredi", "jeudi", "vendredi"].map(
                 (day, index) => {
                   const isCurrentDay = index + 1 === currentDay;
@@ -94,7 +95,7 @@ export default function Tarif() {
               <div className={`${styles.row} ${styles.rowAddress}`}>
                 <div className={styles.label} />
                 <div className={styles.value}>
-                  48 rue alsace lorraine 17200 Royan
+                  48 rue Alsace Lorraine 17200 Royan
                 </div>
               </div>
 
@@ -108,4 +109,6 @@ export default function Tarif() {
       </div>
     </>
   );
-}
+};
+
+export default Tarif;
