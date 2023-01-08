@@ -126,7 +126,7 @@ const ContactForm: React.FC = (): ReactElement => {
               </div>
             )}
             <Button useButtonMarkup type="submit" disabled={!token}>
-              Submit
+              Envoyer
             </Button>
           </form>
         </>
