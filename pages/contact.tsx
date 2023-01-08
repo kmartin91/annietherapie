@@ -40,12 +40,20 @@ export default function Contact() {
           <main className={styles.main}>
             <h1>Demande de rendez-vous</h1>
             <h3>Consultation sur rendez-vous</h3>
-            <p className={styles.phone}>
-              <a href="tel:0695347631">
-                Par Téléphone au :
-                <span className={styles.phoneNumber}>0695347631</span>
-              </a>
-            </p>
+            <div itemScope itemType="https://schema.org/LocalBusiness">
+              <p
+                itemScope
+                itemType="https://schema.org/ContactPoint"
+                className={styles.phone}
+              >
+                <a href="tel:0695347631">
+                  Par Téléphone au :
+                  <span itemProp="telephone" className={styles.phoneNumber}>
+                    0695347631
+                  </span>
+                </a>
+              </p>
+            </div>
 
             <p className={styles.email}> ou par Email via le formulaire:</p>
 

@@ -50,57 +50,71 @@ const Tarif: React.FC = (): ReactElement => {
 
           <main className={styles.main}>
             <h1>Informations pratiques</h1>
-            <div className={styles.group}>
+            <div
+              className={styles.group}
+              itemScope
+              itemType="https://schema.org/LocalBusiness"
+            >
               <h2>Tarif</h2>
-              <div className={styles.row}>
+              <div className={styles.row} itemProp="priceRange">
                 <div className={styles.label}>Séance individuelle (1h)</div>
                 <div className={styles.value}>60€</div>
               </div>
             </div>
-            <div className={styles.group}>
+            <div
+              itemScope
+              itemType="https://schema.org/LocalBusiness"
+              className={styles.group}
+            >
               <h2>Horaires</h2>
-              {["lundi", "mardi", "mercredi", "jeudi", "vendredi"].map(
-                (day, index) => {
-                  const isCurrentDay = index + 1 === currentDay;
-                  const rowClassName = [
+              <div itemProp="openingHours">
+                {["lundi", "mardi", "mercredi", "jeudi", "vendredi"].map(
+                  (day, index) => {
+                    const isCurrentDay = index + 1 === currentDay;
+                    const rowClassName = [
+                      styles.row,
+                      styles.rowCalendar,
+                      isCurrentDay && styles.today,
+                    ]
+                      .filter(Boolean)
+                      .join(" ");
+                    return (
+                      <div key={day} className={rowClassName}>
+                        <div className={styles.label}>{day}</div>
+                        <div className={styles.value}>9h - 19h30</div>
+                      </div>
+                    );
+                  }
+                )}
+                <div
+                  className={[
                     styles.row,
                     styles.rowCalendar,
-                    isCurrentDay && styles.today,
+                    isSaturday && styles.today,
                   ]
                     .filter(Boolean)
-                    .join(" ");
-                  return (
-                    <div key={day} className={rowClassName}>
-                      <div className={styles.label}>{day}</div>
-                      <div className={styles.value}>9h - 19h30</div>
-                    </div>
-                  );
-                }
-              )}
-              <div
-                className={[
-                  styles.row,
-                  styles.rowCalendar,
-                  isSaturday && styles.today,
-                ]
-                  .filter(Boolean)
-                  .join(" ")}
-              >
-                <div className={styles.label}>samedi</div>
-                <div className={styles.value}>9h - 12h30</div>
+                    .join(" ")}
+                >
+                  <div className={styles.label}>samedi</div>
+                  <div className={styles.value}>9h - 12h30</div>
+                </div>
               </div>
             </div>
-            <div className={styles.group}>
+            <div
+              className={styles.group}
+              itemScope
+              itemType="https://schema.org/Place"
+            >
               <h2>Adresse</h2>
               <div className={`${styles.row} ${styles.rowAddress}`}>
                 <div className={styles.label} />
-                <div className={styles.value}>
+                <div className={styles.value} itemProp="address">
                   48 rue Alsace Lorraine 17200 Royan
                 </div>
               </div>
-
-              <OpenStreetMap />
             </div>
+
+            <OpenStreetMap />
             <Button className={commonStyles.buttonMain} href="/contact">
               Contact
             </Button>

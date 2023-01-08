@@ -35,18 +35,25 @@
     width: 100%;
 }
 
-.group > .row {
+.row {
     display: flex;
     flex-direction: row;
+    gap: 16px;    
+    justify-content: center;    
 }
 
-.group > .rowCalendar > .label {
+.rowCalendar {
+    margin: 16px;
+    align-items: center;
+}
+
+.rowCalendar > .label {
     position: relative;
     text-align: right;
     min-width: 56px;
 }
 
-.group > .rowCalendar > .label:before {
+.rowCalendar > .label:before {
     content: "";
     position: absolute;
     right: -8px;
@@ -55,24 +62,19 @@
     width: 3px;
 }
 
-.group > .rowCalendar > .value {
+.rowCalendar > .value {
     padding-left: 8px;
+    font-size: var(--font-size-base);
 }
 
-.group > .row {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;    
-    justify-content: center;
+.rowAddress {
+    font-size: var(--font-size-md);
 }
 
-.group > .today {
+.today {
     background-color: var(--secondary-color);
 }
 
-.rowAddress > .value {
-    font-size: var(--font-size-md);
-}
 
 
 
