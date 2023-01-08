@@ -182,7 +182,7 @@ export default function Home() {
             Aujourd&apos;hui, j&apos;accompagne les jeunes adultes, adultes et
             seniors, en séance individuelle d&apos;une heure. Mon cabinet est
             situé dans{" "}
-            <Link href="/tarif-horaire/">le centre ville de Royan</Link>.
+            <Link href="/informations/">le centre ville de Royan</Link>.
           </p>
           <p className={commonStyles.text}>
             Ma pratique est supervisée, ce qui me permet de garder un regard

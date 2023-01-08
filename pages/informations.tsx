@@ -6,7 +6,7 @@ import Button from "components/button/default/Button";
 import Header from "components/header/Header";
 
 import commonStyles from "sections/common/section.module.css";
-import styles from "styles/pages/infos.module.css";
+import styles from "styles/pages/informations.module.css";
 
 const cormorant = Cormorant_Garamond({
   weight: "300",

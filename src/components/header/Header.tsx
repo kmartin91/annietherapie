@@ -61,8 +61,11 @@ const Header: React.FC<HeaderProps> = ({
               </Link>
             </li>
             <li className={styles.item}>
-              <Link href="/infos" className={getLinkClass("/tarif-horaire")}>
-                Infos pratiques
+              <Link
+                href="/informations"
+                className={getLinkClass("/informations")}
+              >
+                Informations pratiques
               </Link>
             </li>
           </ul>
@@ -92,8 +95,11 @@ const Header: React.FC<HeaderProps> = ({
               </Link>
             </li>
             <li className={styles.item}>
-              <Link href="/infos" className={getLinkClass("/tarif-horaire")}>
-                Infos pratiques
+              <Link
+                href="/informations"
+                className={getLinkClass("/informations")}
+              >
+                Informations pratiques
               </Link>
             </li>
           </ul>
