@@ -107,7 +107,7 @@ body:has(.mobileMenuOpen) > div > div {
 
 .mobileMenu > .buttonContainer {
   position: absolute;
-  bottom: 20vw;
+  bottom: 20vh;
   display: block;
   left: 50%;
   transform: translateX(-50%);

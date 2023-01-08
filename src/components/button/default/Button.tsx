@@ -7,6 +7,7 @@ import styles from "components/button/default/Button.module.css";
 const cormorant = Cormorant_Garamond({
   weight: "300",
   subsets: ["latin"],
+  display: "swap",
 });
 
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {

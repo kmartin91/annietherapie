@@ -13,6 +13,7 @@ interface HeaderProps {
 const cormorant = Cormorant_Garamond({
   weight: "300",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const Header: React.FC<HeaderProps> = ({

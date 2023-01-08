@@ -9,6 +9,7 @@ import styles from "styles/pages/contact.module.css";
 const cormorant = Cormorant_Garamond({
   weight: "300",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export default function Contact() {

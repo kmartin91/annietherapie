@@ -17,7 +17,7 @@
     justify-content: center;
     align-items: center;
     margin: auto 0;
-    gap: 16px;
+    gap: 24px;
 }
 
 .main > h2 {
@@ -76,6 +76,10 @@
 @media (max-width: 768px) {
     .section {
         padding-bottom: 20vw;
+    }
+
+    .main {
+        margin-top: 5vh;
     }
 }
 
