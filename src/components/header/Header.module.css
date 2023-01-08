@@ -93,7 +93,7 @@ body:has(.mobileMenuOpen) > div > div {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 5vmax;
+  margin-top: 5vh;
   font-size: var(--font-size-lg);
 }
 
@@ -218,6 +218,10 @@ body:has(.mobileMenuOpen) > div > div {
 
   .header {
     padding: 5vw 4vw;
+  }
+
+  .link::after {
+    bottom: 0.3em;
   }
 
 }

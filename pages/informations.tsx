@@ -34,14 +34,6 @@ const Tarif: React.FC = (): ReactElement => {
           name="description"
           content="Trouvez nos horaires, tarifs, et informations de contact pour prendre rendez-vous au cabinet de gestalt thérapie à Royan."
         />
-        <meta
-          name="keywords"
-          content="gestalt,thérapie,royan,annie,maquet,gestalt thérapie,psychopraticien,psychopraticienne,psychothérapeute,psychocorporelle,psychothérapie,accompagnement,saujon,vaux-sur-mer,saint-palais-sur-mer,saint-augustin,saint-georges-de-didonne"
-        />
-        <meta name="robots" content="index, follow" />
-        <meta name="language" content="French" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className={`${cormorant.className} ${commonStyles.container}`}>

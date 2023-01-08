@@ -7,8 +7,7 @@
 
 .formItem > input,
 .formItem > textarea {
-  width: 100%;
-  max-width: 400px;
+  width: min(50vw, 550px);
   min-height: 50px;
   padding: 0 16px;
   box-sizing: border-box;
@@ -47,6 +46,13 @@
 
 .error {
     color: var(--red);
+}
+
+@media (max-width: 768px) {
+  .formItem > input,
+  .formItem > textarea {
+    width: calc(100vw - 32px)
+  }
 }
 
 @media (prefers-color-scheme: dark) {

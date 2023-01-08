@@ -47,6 +47,7 @@
 
 .sectionButton {
   align-self: center;
+  margin-bottom: 2vmax;
 }
 
 
@@ -59,7 +60,7 @@
   display: flex;
   flex-direction: row;
   gap: 64px;
-  margin-top: 3vmax;
+  margin: 3vmax 0;
   width: 60vw;
 }
 
