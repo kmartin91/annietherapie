@@ -16,7 +16,7 @@ body:has(.mobileMenuOpen) > div > div {
   justify-content: flex-start;
   align-items: center;
   z-index: 2;
-  padding: 5vw 4vw;
+  padding: 2vw 4vw;
   height: max-content;
   color: var(--primary-color);
 }
@@ -208,6 +208,10 @@ body:has(.mobileMenuOpen) > div > div {
 
   .mobileMenu > .title {
     color: var(--white);
+  }
+
+  .header {
+    padding: 5vw 4vw;
   }
 
 }
