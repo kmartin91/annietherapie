@@ -1,7 +1,8 @@
 .section {
     background-color: var(--white);
     color: var(--primary-color);
-    height: 100vh;
+    min-height: 100vh;
+    padding-bottom: 20vh;
 }
 
 .main {
@@ -18,7 +19,15 @@
 }
 
 .phone {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-md);
+}
+
+.phoneNumber {
+    padding-left: 4px;
+}
+
+.email {
+    font-size: var(--font-size-base);
 }
 
 @media (prefers-color-scheme: dark) {

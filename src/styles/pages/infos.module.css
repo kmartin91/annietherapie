@@ -1,0 +1,92 @@
+.section {
+    background-color: var(--white);
+    color: var(--primary-color);
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    scroll-snap-align: start;
+    position: relative;
+    flex-direction: column;
+    z-index: 2;
+    padding-bottom: 2vw;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+    gap: 16px;
+}
+
+.main > h2 {
+    font-size: var(--font-size-md);
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.group > .row {
+    display: flex;
+    flex-direction: row;
+}
+
+.group > .rowCalendar > .label {
+    position: relative;
+    text-align: right;
+    min-width: 56px;
+}
+
+.group > .rowCalendar > .label:before {
+    content: "";
+    position: absolute;
+    right: -8px;
+    background-color: var(--primary-color);
+    height: 100%;
+    width: 3px;
+}
+
+.group > .rowCalendar > .value {
+    padding-left: 8px;
+}
+
+.group > .row {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;    
+    justify-content: center;
+}
+
+.group > .today {
+    background-color: var(--secondary-color);
+}
+
+.rowAddress > .value {
+    font-size: var(--font-size-md);
+}
+
+
+
+@media (max-width: 768px) {
+    .section {
+        padding-bottom: 20vw;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .section {
+      background-color: var(--primary-color-black); 
+      color: var(--white);
+    }
+
+    .group > .today {
+        background-color: var(--primary-color);
+    }
+  }
+  

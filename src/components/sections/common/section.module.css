@@ -52,6 +52,7 @@
 
 .titleContent {
   font-size: var(--font-size-xl);
+  text-align: center;
 }
 
 .textWithImageWrapper {
@@ -164,7 +165,8 @@
     display: none;
   }
 
-  .text {
+  .text > ul {
+    padding: 4vw;
   }
 }
 

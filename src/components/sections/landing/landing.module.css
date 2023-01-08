@@ -14,7 +14,7 @@
     flex-direction: column;
     font-size: var(--font-size-base);
     position: absolute;
-    bottom: 32px;
+    bottom: 2vw;
   }
   
   .citation > q {
@@ -55,5 +55,6 @@
   @media (max-width: 768px) { 
     .citation {
       padding: 0 2vw;
+      bottom: 20vw;
     }
   }

@@ -19,7 +19,7 @@ interface FormData {
 const schema = yup
   .object()
   .shape({
-    name: yup.string().required("Merci de renseigner votre nom"),
+    name: yup.string().required("Merci de renseigner votre nom & prénom"),
     email: yup
       .string()
       .email("Merci de saisir un email valide")
@@ -88,7 +88,7 @@ const ContactForm: React.FC = (): ReactElement => {
           )}
           <form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
             <div className={styles.formItem}>
-              <label>Nom</label>
+              <label>Nom & prénom</label>
               <input {...register("name")} />
               {errors.name && (
                 <p className={styles.error}>{errors.name.message}</p>
@@ -133,10 +133,7 @@ const ContactForm: React.FC = (): ReactElement => {
       ) : (
         <>
           {formSent && (
-            <p className={styles.success}>
-              Votre message a bien été envoyé, j&apos;y réponderai dans les plus
-              bref délais
-            </p>
+            <p className={styles.success}>Votre message a bien été envoyé.</p>
           )}
         </>
       )}

@@ -39,10 +39,19 @@ const Header: React.FC<HeaderProps> = ({
     .filter(Boolean)
     .join(" ");
 
+  const burgerIconClassName = [
+    styles.burgerIcon,
+    isOpenMenu && styles.burgerIconClose,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
     <>
       <header className={headerClassName}>
-        <h2 className={styles.title}>Annie MAQUET - Psychopraticienne</h2>
+        <h2 className={styles.title}>
+          <Link href="#presentation">Annie MAQUET</Link> - Psychopraticienne
+        </h2>
         <nav className={`${cormorant.className} ${styles.nav}`}>
           <ul className={styles.list}>
             <li className={styles.item}>
@@ -63,9 +72,7 @@ const Header: React.FC<HeaderProps> = ({
           </Button>
         </div>
         <div
-          className={`${styles.burgerIcon} ${
-            isOpenMenu && styles.burgerIconClose
-          }`}
+          className={burgerIconClassName}
           onClick={() => setIsOpenMenu(true)}
         />
       </header>
@@ -73,9 +80,7 @@ const Header: React.FC<HeaderProps> = ({
         <h2 className={styles.title}>Annie MAQUET - Psychopraticienne</h2>
 
         <div
-          className={`${styles.burgerIcon} ${
-            isOpenMenu && styles.burgerIconClose
-          }`}
+          className={burgerIconClassName}
           onClick={() => setIsOpenMenu(false)}
         />
         <nav className={`${cormorant.className} ${styles.nav}`}>
