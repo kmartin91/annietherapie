@@ -26,9 +26,9 @@ const Landing: React.FC = (): ReactElement => {
       <Header isLandingPage />
 
       <main className={styles.main}>
-        <h1 className={styles.titleMain}>
+        <h2 className={styles.titleMain}>
           Cabinet de Gestalt thérapie à Royan
-        </h1>
+        </h2>
         <Button className={styles.buttonMain} href="#gestalt">
           En savoir plus
         </Button>

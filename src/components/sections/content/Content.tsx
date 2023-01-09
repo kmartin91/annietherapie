@@ -53,7 +53,7 @@ const Content: React.FC<ContentProps> = ({
         Contact
       </Button>
       <div className={commonStyles.content}>
-        <h2 className={commonStyles.titleContent}>{titleContent}</h2>
+        <h3 className={commonStyles.titleContent}>{titleContent}</h3>
         {src && (
           <div className={imageWrapperClassName}>
             <Image src={src} alt={alt} className={commonStyles.image} />

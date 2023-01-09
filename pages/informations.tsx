@@ -41,13 +41,13 @@ const Tarif: React.FC = (): ReactElement => {
           <Header />
 
           <main className={styles.main}>
-            <h1>Informations pratiques</h1>
+            <h2>Informations pratiques</h2>
             <div
               className={styles.group}
               itemScope
               itemType="https://schema.org/LocalBusiness"
             >
-              <h2>Tarif</h2>
+              <h3>Tarif</h3>
               <div className={styles.row} itemProp="priceRange">
                 <div className={styles.label}>Séance individuelle (1h)</div>
                 <div className={styles.value}>60€</div>

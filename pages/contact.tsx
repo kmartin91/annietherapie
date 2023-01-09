@@ -30,8 +30,8 @@ export default function Contact() {
           <Header />
 
           <main className={styles.main}>
-            <h1>Demande de rendez-vous</h1>
-            <h3>Consultation sur rendez-vous</h3>
+            <h2>Demande de rendez-vous</h2>
+            <h2>Consultation sur rendez-vous</h2>
             <div itemScope itemType="https://schema.org/LocalBusiness">
               <p
                 itemScope
@@ -39,7 +39,7 @@ export default function Contact() {
                 className={styles.phone}
               >
                 <a href="tel:0695347631">
-                  Par Téléphone au :
+                  Par téléphone au :
                   <span itemProp="telephone" className={styles.phoneNumber}>
                     0695347631
                   </span>

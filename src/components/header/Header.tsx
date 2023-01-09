@@ -50,9 +50,9 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <>
       <header className={headerClassName}>
-        <h2 className={styles.title}>
+        <h1 className={styles.title}>
           <Link href="#presentation">Annie MAQUET</Link> - Psychopraticienne
-        </h2>
+        </h1>
         <nav className={`${cormorant.className} ${styles.nav}`}>
           <ul className={styles.list}>
             <li className={styles.item}>
