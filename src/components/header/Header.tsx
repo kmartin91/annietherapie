@@ -51,7 +51,10 @@ const Header: React.FC<HeaderProps> = ({
     <>
       <header className={headerClassName}>
         <h1 className={styles.title}>
-          <Link href="#presentation">Annie MAQUET</Link> - Psychopraticienne
+          <Link href={isLandingPage ? "#presentation" : "/#presentation"}>
+            Annie MAQUET
+          </Link>
+          - Psychopraticienne
         </h1>
         <nav className={`${cormorant.className} ${styles.nav}`}>
           <ul className={styles.list}>

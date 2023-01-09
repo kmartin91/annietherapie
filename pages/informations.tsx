@@ -22,6 +22,7 @@ const Tarif: React.FC = (): ReactElement => {
 
   const currentDay = new Date().getDay();
   const isSaturday = currentDay === 6;
+  const isSunday = currentDay === 0;
 
   return (
     <>
@@ -58,7 +59,7 @@ const Tarif: React.FC = (): ReactElement => {
               itemType="https://schema.org/LocalBusiness"
               className={styles.group}
             >
-              <h2>Horaires</h2>
+              <h3>Horaires</h3>
               <div itemProp="openingHours">
                 {["lundi", "mardi", "mercredi", "jeudi", "vendredi"].map(
                   (day, index) => {
@@ -90,6 +91,19 @@ const Tarif: React.FC = (): ReactElement => {
                   <div className={styles.label}>samedi</div>
                   <div className={styles.value}>9h - 12h30</div>
                 </div>
+                <div
+                  className={[
+                    styles.row,
+                    styles.rowCalendar,
+                    isSunday && styles.today,
+                    styles.sunday,
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
+                >
+                  <div className={styles.label}>dimanche</div>
+                  <div className={styles.value}>fermé</div>
+                </div>
               </div>
             </div>
             <div
@@ -97,11 +111,12 @@ const Tarif: React.FC = (): ReactElement => {
               itemScope
               itemType="https://schema.org/Place"
             >
-              <h2>Adresse</h2>
+              <h3>Adresse</h3>
               <div className={`${styles.row} ${styles.rowAddress}`}>
                 <div className={styles.label} />
                 <div className={styles.value} itemProp="address">
-                  48 rue Alsace Lorraine 17200 Royan
+                  <p>48 rue Alsace Lorraine</p>
+                  <p>17200 Royan</p>
                 </div>
               </div>
             </div>

@@ -75,9 +75,13 @@
     background-color: var(--secondary-color);
 }
 
+.group > h3 {
+    font-size: var(--font-size-md);
+}
 
-
-
+.sunday > .value {
+    padding: 0 20px;
+}
 @media (max-width: 768px) {
     .section {
         padding-bottom: 20vw;
