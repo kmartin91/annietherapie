@@ -94,8 +94,12 @@
       color: var(--white);
     }
 
-    .group > .today {
+    .today {
         background-color: var(--primary-color);
+    }
+
+    .today > .label:before {
+        background-color: var(--white);
     }
   }
   

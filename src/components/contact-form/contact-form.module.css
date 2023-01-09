@@ -48,6 +48,11 @@
     color: var(--red);
 }
 
+.submit {
+  margin: 0 auto;
+  min-width: 200px;
+}
+
 @media (max-width: 768px) {
   .formItem > input,
   .formItem > textarea {
