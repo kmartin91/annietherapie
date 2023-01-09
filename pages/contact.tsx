@@ -31,7 +31,7 @@ export default function Contact() {
 
           <main className={styles.main}>
             <h2>Demande de rendez-vous</h2>
-            <h2>Consultation sur rendez-vous</h2>
+            <h3>Consultation sur rendez-vous</h3>
             <div itemScope itemType="https://schema.org/LocalBusiness">
               <p
                 itemScope

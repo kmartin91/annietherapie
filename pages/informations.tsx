@@ -111,7 +111,7 @@ const Tarif: React.FC = (): ReactElement => {
               itemScope
               itemType="https://schema.org/Place"
             >
-              <h3>Adresse</h3>
+              <h3>Adresse du cabinet</h3>
               <div className={`${styles.row} ${styles.rowAddress}`}>
                 <div className={styles.label} />
                 <div className={styles.value} itemProp="address">

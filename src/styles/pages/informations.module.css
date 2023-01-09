@@ -24,7 +24,7 @@
     font-size: var(--font-size-lg);
 }
 .main > h2 {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-lg);
 }
 
 .group {
@@ -42,6 +42,11 @@
     justify-content: center;    
 }
 
+.row > .label,
+.row > .value {
+    font-size: var(--font-size-base);
+}
+
 .rowCalendar {
     margin: 16px;
     align-items: center;
@@ -50,7 +55,7 @@
 .rowCalendar > .label {
     position: relative;
     text-align: right;
-    min-width: 56px;
+    min-width: 68px;
 }
 
 .rowCalendar > .label:before {
