@@ -51,7 +51,7 @@ export default function Home() {
             psychothérapeute Fritz Perls dans les années 50. C’est une thérapie
             psychocorporelle, relationnelle, existentielle et holistique. Le
             terme allemand « Gestalt», se traduit par forme, au sens de
-            « prendre forme» :au fils des séances, le client se sculpte, se
+            « prendre forme » : au fil des séances, le client se sculpte, se
             construit, s’organise.
           </p>
           <p className={commonStyles.text}>
@@ -77,15 +77,15 @@ export default function Home() {
             psychiques et/ou psychosomatiques.
           </p>
           <div className={commonStyles.text}>
-            Voici une liste non exhaustives des problématiques rencontrées au
-            cours de la vie, qui peuvent amener à consulter:
+            Voici une liste non exhaustive des problématiques rencontrées au
+            cours de la vie, qui peuvent amener à consulter :
             <ul className={commonStyles.listSeance}>
               <li>
-                Deuil, dépression, crise d&apos;angoisse, angoisse et anxiété,
+                deuil, dépression, crise d&apos;angoisse, angoisse et anxiété,
                 burn-out, stress,
               </li>
               <li>
-                addictions, troubles du comportement alimentaires (boulimie,
+                addictions, troubles du comportement alimentaire (boulimie,
                 anorexie, hyperphagie, ...), troubles sexuels, phobies
               </li>
               <li>
@@ -114,8 +114,8 @@ export default function Home() {
           hasBigContent
         >
           <p className={commonStyles.text}>
-            Suivre une psychothérapie, c’est s’engager pour soi même. Les
-            séances sont des rendez-vous avec vous même dans un espace de
+            Suivre une psychothérapie, c’est s’engager pour soi-même. Les
+            séances sont des rendez-vous avec vous-même dans un espace de
             liberté d&apos;expression où je vous accueille sans jugement et en
             toute confidentialité et bienveillance. Ensemble nous co-créons une
             alliance thérapeutique qui va soutenir votre évolution.
@@ -128,14 +128,14 @@ export default function Home() {
           </p>
           <p className={commonStyles.text}>
             Au fils des séances, nous cheminerons ensemble à travers les mots
-            déposés, et les expérimentions, tout en considérant
+            déposés, et les expérimentations, tout en considérant
             l&apos;expression de votre corps et son implicite. Nous remettrons
-            du mouvement là ou le figement s&apos;est installé.
+            du mouvement là où des blocages se sont installés.
           </p>
           <p className={commonStyles.text}>
-            Nous élargirons l&apos;horizon afin de trouver un équilibre de vie
-            plus en adéquation avec vos désirs, où la souffrance est
-            transcendée.
+            Nous élargirons l&apos;horizon afin de vous aider à trouver un
+            équilibre de vie plus en adéquation avec vos désirs. Cet équilibre
+            résultant de la transformation de votre souffrance.
           </p>
         </Content>
 
@@ -152,34 +152,34 @@ export default function Home() {
         >
           <p className={commonStyles.text}>
             Fascinée par la complexité de l’être humain, tant par la mécanique
-            du corps, que par celle de la psychée, mon premier métier a été
-            celui d’infirmière, en Ile de France.
+            du corps, que par celle du psychisme, mon premier métier a été celui
+            d’infirmière, en Île-de-France.
           </p>
           <p className={commonStyles.text}>
             Mes expériences professionnelles, personnelles et notamment les
-            psychothérapies que j’ai suivies, m’ont permises d’oser évoluer vers
+            psychothérapies que j’ai suivies, m’ont permis d&apos;évoluer vers
             le métier de psychopraticien.
           </p>
           <p className={commonStyles.text}>
-            Sportive et passionnée par la dance, j’ai été ravie de découvrir des
-            psychothérapies hollistiques qui considèrent autant le corps que
-            l’esprit. Après avoir expérimenté différentes pratiques
-            psychocorporelles, je me suis tournée vers la Gestalt thérapie.
+            Sportive et passionnée par la danse, je me suis naturellement
+            tournée vers des psychothérapies holistiques qui prennent autant en
+            compte le corps que l’esprit. Après avoir expérimenté différentes
+            pratiques psychocorporelles, j&apos;ai choisi d&apos;approfondir la
+            Gestalt thérapie.
           </p>
           <p className={commonStyles.text}>
             Certifiée Gestalt praticienne, c’est à l’IFFP (l’Institut Français
-            de Formation Psychocorporelle), que j’ai été formée.
+            de Formation Psychocorporelle), que je me suis formée.
           </p>
           <p className={commonStyles.text}>
-            Aujourd&apos;hui, j&apos;accompagne les jeunes adultes, adultes et
-            seniors, en séance individuelle d&apos;une heure. Mon cabinet est
-            situé dans{" "}
+            J&apos;accompagne les clients adultes, en séance individuelle
+            d&apos;une heure. Mon cabinet est situé dans{" "}
             <Link href="/informations/">le centre ville de Royan</Link>.
           </p>
           <p className={commonStyles.text}>
-            Ma pratique est supervisée, ce qui me permet de garder un regard
-            ouvert et critique sur mon travail et de l&apos;enrichir des
-            conseils avisés de mes pairs.
+            Je suis engagée dans un processus de supervision et de formation
+            continue. Cela me permet de maintenir un regard ouvert et critique
+            sur ma pratique.
           </p>
         </Content>
       </div>

@@ -106,6 +106,11 @@
   top: 2vw;
 }
 
+.text > ul {
+  text-align: initial;
+  padding: 10px 0 0 20px;
+}
+
 
 @media (max-width: 768px) {
   .buttonMain {
