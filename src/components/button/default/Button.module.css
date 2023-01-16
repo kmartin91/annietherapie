@@ -28,7 +28,7 @@
     border-radius: 48px;
     padding: 12px 24px;
     top: 0;
-    translate: 0 100%;
+    transform: translate(0, 100%);
     z-index: -1;
     transform-origin: bottom left;
     transition: .2s all ease-out;
@@ -40,7 +40,7 @@
 }
 
 .btn:hover::after {
-    translate: 0 0;
+    transform: translate(0, 0);
 }
 
 .btn:disabled {
