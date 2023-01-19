@@ -117,6 +117,7 @@ const Tarif: React.FC = (): ReactElement => {
                 <div className={styles.value} itemProp="address">
                   <p>48 rue Alsace Lorraine</p>
                   <p>17200 Royan</p>
+                  <p>Charente-Maritime</p>
                 </div>
               </div>
             </div>
