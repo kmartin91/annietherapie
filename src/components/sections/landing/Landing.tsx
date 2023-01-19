@@ -25,7 +25,7 @@ const Landing: React.FC = (): ReactElement => {
 
       <Header isLandingPage />
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         <h2 className={styles.titleMain}>
           Cabinet de Gestalt thérapie à Royan
         </h2>
@@ -40,7 +40,7 @@ const Landing: React.FC = (): ReactElement => {
           </q>
           <span className={styles.author}>André Gide</span>
         </p>
-      </main>
+      </div>
     </section>
   );
 };

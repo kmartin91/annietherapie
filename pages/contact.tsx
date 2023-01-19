@@ -21,7 +21,7 @@ export default function Contact() {
         </title>
         <meta
           name="description"
-          content="Prenez rendez-vous au cabinet de gestalt thérapie à Royan en ligne ou par téléphone. Grande plage horaire disponible."
+          content="Prenez rendez-vous au cabinet de gestalt thérapie à Royan (Charente-Maritime) en ligne ou par téléphone. Grande plage horaire disponible."
         />
       </Head>
 
@@ -29,7 +29,7 @@ export default function Contact() {
         <section className={`${styles.section} ${styles.sectionAlternate}`}>
           <Header />
 
-          <main className={styles.main}>
+          <div className={styles.main}>
             <h2>Demande de rendez-vous</h2>
             <h3>Consultation sur rendez-vous</h3>
             <div itemScope itemType="https://schema.org/LocalBusiness">
@@ -50,7 +50,7 @@ export default function Contact() {
             <p className={styles.email}> ou par Email via le formulaire:</p>
 
             <ContactForm />
-          </main>
+          </div>
         </section>
       </div>
     </>

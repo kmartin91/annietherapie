@@ -41,7 +41,7 @@ const Tarif: React.FC = (): ReactElement => {
         <section className={styles.section}>
           <Header />
 
-          <main className={styles.main}>
+          <div className={styles.main}>
             <h2>Informations pratiques</h2>
             <div
               className={styles.group}
@@ -125,7 +125,7 @@ const Tarif: React.FC = (): ReactElement => {
             <Button className={commonStyles.buttonMain} href="/contact">
               Contact
             </Button>
-          </main>
+          </div>
         </section>
       </div>
     </>
