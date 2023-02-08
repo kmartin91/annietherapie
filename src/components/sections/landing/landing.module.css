@@ -48,8 +48,11 @@
   }
   
   .buttonMain {
-    margin-top: 5vmax;
     min-width: 10vw;
+  }
+
+  .small {
+    font-size: var(--font-size-lg);
   }
   
   @media (max-width: 768px) { 

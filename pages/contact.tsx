@@ -21,7 +21,7 @@ export default function Contact() {
         </title>
         <meta
           name="description"
-          content="Prenez rendez-vous au cabinet de gestalt thérapie à Royan (Charente-Maritime) en ligne ou par téléphone. Grande plage horaire disponible."
+          content="Prenez rendez-vous au cabinet de psychothérapie, gestalt thérapie à Royan (Charente-Maritime) en ligne ou par téléphone. Grande plage horaire disponible."
         />
       </Head>
 

@@ -112,6 +112,29 @@
 }
 
 
+.link {
+  font-size: var(--font-size-base);
+  position: relative;
+  padding: 16px 2px;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  bottom: 0.7em;
+  background-color: currentColor;
+}
+
+.classicLink {
+  font-size: var(--font-size-base);
+  position: relative;
+  text-decoration: underline;
+}
+
+
 @media (max-width: 768px) {
   .buttonMain {
     margin-top: 5vmax;

@@ -27,7 +27,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="Cabinet de gestalt thérapie dans le centre ville de Royan, accompagnement et soutien via une thérapie psychocorporelle."
+          content="Cabinet de psychothérapie. Pratique de la gestalt thérapie dans le centre ville de Royan, Charente-Maritime, accompagnement et soutien via une thérapie psychocorporelle."
         />
       </Head>
 
@@ -48,11 +48,11 @@ export default function Home() {
         >
           <p className={commonStyles.text}>
             La Gestalt thérapie a été théorisée par le psychiatre et
-            psychothérapeute Fritz Perls dans les années 50. C’est une thérapie
-            psychocorporelle, relationnelle, existentielle et holistique. Le
-            terme allemand « Gestalt», se traduit par forme, au sens de
-            « prendre forme » : au fil des séances, le client se sculpte, se
-            construit, s’organise.
+            psychothérapeute Fritz Perls dans les années 50. C’est une
+            psychothérapie psychocorporelle, relationnelle, existentielle et
+            holistique. Le terme allemand « Gestalt», se traduit par forme, au
+            sens de « prendre forme » : au fil des séances, le client se
+            sculpte, se construit, s’organise.
           </p>
           <p className={commonStyles.text}>
             Cette psychothérapie porte un regard attentif sur la manière dont le
@@ -168,13 +168,22 @@ export default function Home() {
             Gestalt thérapie.
           </p>
           <p className={commonStyles.text}>
-            Certifiée Gestalt praticienne, c’est à l’IFFP (l’Institut Français
-            de Formation Psychocorporelle), que je me suis formée.
+            Certifiée Gestalt praticienne, c’est à l’
+            <Link
+              href="https://gestalt-iffp.fr/"
+              className={commonStyles.classicLink}
+            >
+              IFFP (l’Institut Français de Formation Psychocorporelle)
+            </Link>
+            , que je me suis formée.
           </p>
           <p className={commonStyles.text}>
             J&apos;accompagne les clients adultes, en séance individuelle
-            d&apos;une heure. Mon cabinet est situé dans{" "}
-            <Link href="/informations/">le centre ville de Royan</Link>.
+            d&apos;une heure. Mon cabinet est situé dans le centre ville de
+            <Link href="/informations/" className={commonStyles.link}>
+              Royan en Charente-Maritime
+            </Link>
+            .
           </p>
           <p className={commonStyles.text}>
             Je suis engagée dans un processus de supervision et de formation

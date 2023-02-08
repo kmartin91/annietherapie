@@ -33,7 +33,7 @@ const Tarif: React.FC = (): ReactElement => {
         </title>
         <meta
           name="description"
-          content="Trouvez nos horaires, tarifs, et informations de contact pour prendre rendez-vous au cabinet de gestalt thérapie à Royan."
+          content="Trouvez nos horaires, tarifs, et informations de contact pour prendre rendez-vous au cabinet de psychothérapie, gestalt thérapie à Royan."
         />
       </Head>
 
@@ -111,13 +111,68 @@ const Tarif: React.FC = (): ReactElement => {
               itemScope
               itemType="https://schema.org/Place"
             >
-              <h3>Adresse du cabinet</h3>
+              <h3>Se rendre au cabinet de Psychothérapie</h3>
               <div className={`${styles.row} ${styles.rowAddress}`}>
                 <div className={styles.label} />
                 <div className={styles.value} itemProp="address">
                   <p>48 rue Alsace Lorraine</p>
                   <p>17200 Royan</p>
                   <p>Charente-Maritime</p>
+                </div>
+              </div>
+              <div className={styles.row}>
+                Premier étage avec ascenseur
+                <br />
+                Conforme aux normes PMR ♿
+              </div>
+
+              <h4>Accès transport en commun Cara&apos;Bus</h4>
+
+              <div className={styles.busInfo}>
+                <div className={`${styles.row} ${styles.rowBus}`}>
+                  <div className={`${styles.label} ${styles.labelNum}`}>1</div>
+                  <div className={styles.value}>Arrêt De Gaulle</div>
+                </div>
+                <div className={`${styles.row} ${styles.rowBus}`}>
+                  <div
+                    className={`${styles.label} ${styles.labelNum} ${styles.labelNum2}`}
+                  >
+                    2
+                  </div>
+
+                  <div className={styles.value}>Arrêt Chevalier</div>
+                </div>
+                <div className={`${styles.row} ${styles.rowBus}`}>
+                  <div
+                    className={`${styles.label} ${styles.labelNum} ${styles.labelNum3}`}
+                  >
+                    3
+                  </div>
+                  <div className={styles.value}>Arrêt Loti</div>
+                </div>
+                <div className={`${styles.row} ${styles.rowBus}`}>
+                  <div
+                    className={`${styles.label} ${styles.labelNum} ${styles.labelNum3}`}
+                  >
+                    3
+                  </div>
+                  <div className={styles.value}>Arrêt Font Cherves</div>
+                </div>
+                <div className={`${styles.row} ${styles.rowBus}`}>
+                  <div
+                    className={`${styles.label} ${styles.labelNum} ${styles.labelNum3}`}
+                  >
+                    3
+                  </div>
+                  <div className={styles.value}>Arrêt Notre Dame</div>
+                </div>
+                <div className={`${styles.row} ${styles.rowBus}`}>
+                  <div
+                    className={`${styles.label} ${styles.labelNum} ${styles.labelNum5}`}
+                  >
+                    5
+                  </div>
+                  <div className={styles.value}>Arrêt St-Pierre</div>
                 </div>
               </div>
             </div>

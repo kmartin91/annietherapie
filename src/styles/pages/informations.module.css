@@ -24,7 +24,7 @@
     font-size: var(--font-size-lg);
 }
 .main > h2 {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
 }
 
 .group {
@@ -80,13 +80,62 @@
     background-color: var(--secondary-color);
 }
 
+
 .group > h3 {
+    font-size: var(--font-size-lg);
+}
+
+.group > h4 {
     font-size: var(--font-size-md);
 }
 
 .sunday > .value {
     padding: 0 20px;
 }
+
+.busInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rowBus {
+    display: flex;
+    align-items: center;
+    align-self: baseline;
+}
+
+.rowBus > .value {
+    font-size: var(--font-size-base);
+}
+
+.row > .labelNum {
+    height: 24px;
+    width: 24px;
+    background-color: hsl(15.65,73.25%,69.22%);
+    color: var(--white);
+    border-radius: 50%;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: system-ui;
+}
+
+.row > .labelNum2 {
+    background-color: hsl(243.33,29.67%,64.31%);
+}
+
+.row > .labelNum3 {
+    background-color: hsl(55.15,96.12%,79.8%);
+    color: var(--black);
+}
+
+.row > .labelNum5 {
+    background-color: hsl(197.57,86.6%,59.02%);
+    color: var(--black);
+}
+
 @media (max-width: 768px) {
     .section {
         padding-bottom: 20vw;

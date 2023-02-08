@@ -27,7 +27,10 @@ const Landing: React.FC = (): ReactElement => {
 
       <div className={styles.main}>
         <h2 className={styles.titleMain}>
-          Cabinet de Gestalt thérapie à Royan
+          Cabinet de psychothérapie <br />
+          <span className={styles.small}>Gestalt thérapie</span>
+          <br />
+          Royan
         </h2>
         <Button className={styles.buttonMain} href="#gestalt">
           En savoir plus
