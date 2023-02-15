@@ -74,7 +74,7 @@ const Tarif: React.FC = (): ReactElement => {
                     return (
                       <div key={day} className={rowClassName}>
                         <div className={styles.label}>{day}</div>
-                        <div className={styles.value}>9h - 19h30</div>
+                        <div className={styles.value}>9h - 20h00</div>
                       </div>
                     );
                   }
@@ -89,7 +89,7 @@ const Tarif: React.FC = (): ReactElement => {
                     .join(" ")}
                 >
                   <div className={styles.label}>samedi</div>
-                  <div className={styles.value}>9h - 12h30</div>
+                  <div className={styles.value}>9h - 13h00</div>
                 </div>
                 <div
                   className={[
