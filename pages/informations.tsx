@@ -103,6 +103,7 @@ const Tarif: React.FC = (): ReactElement => {
                     styles.row,
                     styles.rowCalendar,
                     isSaturday && styles.today,
+                    styles.saturday,
                   ]
                     .filter(Boolean)
                     .join(" ")}

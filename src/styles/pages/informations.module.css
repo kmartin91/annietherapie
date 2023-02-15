@@ -53,28 +53,37 @@
 }
 
 .rowCalendar {
+    --min-width: 300px;
     align-items: center;
+    min-width: var(--min-width);
+    justify-content: space-between;
 }
 
 .rowCalendar > .label {
     position: relative;
     text-align: right;
-    min-width: 68px;
 }
 
-.rowCalendar > .label:before {
+.rowCalendar > .value:before {
     content: "";
     position: absolute;
-    right: -8px;
+    left: calc(var(--min-width) / -4);
     background-color: var(--primary-color);
     height: 100%;
     width: 3px;
 }
 
+.rowCalendar.saturday > .value:before {
+    left: calc(calc(var(--min-width) / -4) - 3px);
+}
+
+.rowCalendar.sunday > .value:before {
+    left: calc(calc(var(--min-width) / -4) + 5px);
+}
+
 .rowCalendar > .value {
-    padding-left: 8px;
     font-size: var(--font-size-base);
-    min-width: 78px;
+    position: relative;
 }
 
 .rowAddress {
@@ -201,6 +210,22 @@
     .main {
         margin-top: 5vh;
     }
+
+    .rowCalendar {
+        min-width: 160px;
+    }
+
+    .rowCalendar > .value:before {
+        left: -20px;
+    }
+    
+    .rowCalendar.saturday > .value:before {
+        left: -23px;
+    }
+    
+    .rowCalendar.sunday > .value:before {
+        left: -11px;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -213,7 +238,7 @@
         background-color: var(--primary-color);
     }
 
-    .today > .label:before {
+    .today > .value:before {
         background-color: var(--white);
     }
   }
