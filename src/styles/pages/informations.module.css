@@ -158,12 +158,9 @@
 }
 
 /* create a disapears effect on first image and appears on second image */
-.slider > .image:nth-child(1) {
-    animation: fadeFirst var(--slide-speed) 0s infinite;
-}
 
 .slider > .image:nth-child(2) {
-    animation: fade  var(--slide-speed) var(--slide-speed) infinite;
+    animation: fade  var(--slide-speed) calc(var(--slide-speed) / 4) infinite;
 }
 
 @keyframes fade {
