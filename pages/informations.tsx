@@ -79,7 +79,7 @@ const Tarif: React.FC = (): ReactElement => {
               className={styles.group}
             >
               <h3>Horaires</h3>
-              <div itemProp="openingHours">
+              <div itemProp="openingHours" className={styles.openingHours}>
                 {["lundi", "mardi", "mercredi", "jeudi", "vendredi"].map(
                   (day, index) => {
                     const isCurrentDay = index + 1 === currentDay;
