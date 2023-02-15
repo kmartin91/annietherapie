@@ -1,10 +1,14 @@
 import { Cormorant_Garamond } from "@next/font/google";
-import { ReactElement } from "react";
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import Image from "next/image";
+import { ReactElement, Fragment } from "react";
 
 import Button from "components/button/default/Button";
 import Header from "components/header/Header";
+
+import Cabinet1 from "images/cabinet1.jpg";
+import Cabinet2 from "images/cabinet2.jpg";
 
 import commonStyles from "sections/common/section.module.css";
 import styles from "styles/pages/informations.module.css";
@@ -14,6 +18,21 @@ const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   display: "swap",
 });
+
+const images = [
+  <Image
+    key="image1"
+    src={Cabinet1}
+    alt="Cabinet de Psychothérapie - Royan - Charente-Maritime"
+    className={styles.image}
+  />,
+  <Image
+    key="image2"
+    src={Cabinet2}
+    alt="Cabinet de Psychothérapie - Royan - Charente-Maritime"
+    className={styles.image}
+  />,
+];
 
 const Tarif: React.FC = (): ReactElement => {
   const OpenStreetMap = dynamic(() => import("components/map/Map"), {
@@ -105,6 +124,11 @@ const Tarif: React.FC = (): ReactElement => {
                   <div className={styles.value}>fermé</div>
                 </div>
               </div>
+            </div>
+            <div className={styles.slider}>
+              {images.map((src) => (
+                <Fragment key={src.key}>{src}</Fragment>
+              ))}
             </div>
             <div
               className={styles.group}
