@@ -63,29 +63,7 @@ const Tarif: React.FC = (): ReactElement => {
 
           <div className={styles.main}>
             <h2>Informations pratiques</h2>
-            <div id="js_widget" className="ie-common-widget ie-reviews">
-              {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
-              <Script
-                src="https://www.psychologue.net/widget/review?com=397262&h=473cfbb97d6e3caaaa14ff2570a99d71&v=10"
-                strategy="beforeInteractive"
-                defer={false}
-              ></Script>
-              <link
-                media="all"
-                type="text/css"
-                rel="stylesheet"
-                href="https://www.psychologue.net/10014885/css/widget.css"
-              ></link>
-              <div className="portal-by">
-                <a
-                  id="js_portal_by"
-                  href="https://www.psychologue.net?utm_source=397262&utm_medium=widget&utm_campaign=widget-review"
-                  rel="nofollow"
-                >
-                  Par <span>Psychologue.net</span>
-                </a>
-              </div>
-            </div>
+
             <div
               className={styles.group}
               itemScope
