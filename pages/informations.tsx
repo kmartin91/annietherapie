@@ -2,6 +2,7 @@ import { Cormorant_Garamond } from "@next/font/google";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import Image from "next/image";
+import Script from "next/script";
 import { ReactElement, Fragment } from "react";
 
 import Button from "components/button/default/Button";
@@ -62,6 +63,29 @@ const Tarif: React.FC = (): ReactElement => {
 
           <div className={styles.main}>
             <h2>Informations pratiques</h2>
+            <div id="js_widget" className="ie-common-widget ie-reviews">
+              {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
+              <Script
+                src="https://www.psychologue.net/widget/review?com=397262&h=473cfbb97d6e3caaaa14ff2570a99d71&v=10"
+                strategy="beforeInteractive"
+                defer={false}
+              ></Script>
+              <link
+                media="all"
+                type="text/css"
+                rel="stylesheet"
+                href="https://www.psychologue.net/10014885/css/widget.css"
+              ></link>
+              <div className="portal-by">
+                <a
+                  id="js_portal_by"
+                  href="https://www.psychologue.net?utm_source=397262&utm_medium=widget&utm_campaign=widget-review"
+                  rel="nofollow"
+                >
+                  Par <span>Psychologue.net</span>
+                </a>
+              </div>
+            </div>
             <div
               className={styles.group}
               itemScope
@@ -103,13 +127,13 @@ const Tarif: React.FC = (): ReactElement => {
                     styles.row,
                     styles.rowCalendar,
                     isSaturday && styles.today,
-                    styles.saturday,
+                    styles.sunday,
                   ]
                     .filter(Boolean)
                     .join(" ")}
                 >
                   <div className={styles.label}>samedi</div>
-                  <div className={styles.value}>9h - 13h00</div>
+                  <div className={styles.value}>fermé</div>
                 </div>
                 <div
                   className={[
