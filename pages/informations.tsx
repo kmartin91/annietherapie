@@ -43,6 +43,8 @@ const Tarif: React.FC = (): ReactElement => {
   const currentDay = new Date().getDay();
   const isSaturday = currentDay === 6;
   const isSunday = currentDay === 0;
+  const isFriday = currentDay === 5;
+  const isThursday = currentDay === 4;
 
   return (
     <>
@@ -82,24 +84,48 @@ const Tarif: React.FC = (): ReactElement => {
             >
               <h3>Horaires</h3>
               <div itemProp="openingHours" className={styles.openingHours}>
-                {["lundi", "mardi", "mercredi", "jeudi", "vendredi"].map(
-                  (day, index) => {
-                    const isCurrentDay = index + 1 === currentDay;
-                    const rowClassName = [
-                      styles.row,
-                      styles.rowCalendar,
-                      isCurrentDay && styles.today,
-                    ]
-                      .filter(Boolean)
-                      .join(" ");
-                    return (
-                      <div key={day} className={rowClassName}>
-                        <div className={styles.label}>{day}</div>
-                        <div className={styles.value}>9h - 20h00</div>
-                      </div>
-                    );
-                  }
-                )}
+                {["lundi", "mardi", "mercredi"].map((day, index) => {
+                  const isCurrentDay = index + 1 === currentDay;
+                  const rowClassName = [
+                    styles.row,
+                    styles.rowCalendar,
+                    isCurrentDay && styles.today,
+                  ]
+                    .filter(Boolean)
+                    .join(" ");
+                  return (
+                    <div key={day} className={rowClassName}>
+                      <div className={styles.label}>{day}</div>
+                      <div className={styles.value}>10h - 19h00</div>
+                    </div>
+                  );
+                })}
+
+                <div
+                  className={[
+                    styles.row,
+                    styles.rowCalendar,
+                    isThursday && styles.today,
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
+                >
+                  <div className={styles.label}>jeudi</div>
+                  <div className={styles.value}>13h - 19h00</div>
+                </div>
+                <div
+                  className={[
+                    styles.row,
+                    styles.rowCalendar,
+                    isFriday && styles.today,
+                    styles.sunday,
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
+                >
+                  <div className={styles.label}>vendredi</div>
+                  <div className={styles.value}>fermé</div>
+                </div>
                 <div
                   className={[
                     styles.row,
