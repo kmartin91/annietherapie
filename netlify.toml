@@ -1,0 +1,16 @@
+# Remplace la configuration de l'interface Netlify (commande yarn, plugin
+# Lighthouse dans une ancienne version qui exigeait Node < 20).
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  # Next 16 demande Node 20.9 ou plus.
+  NODE_VERSION = "22"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Version fixée dans package.json (devDependencies).
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
