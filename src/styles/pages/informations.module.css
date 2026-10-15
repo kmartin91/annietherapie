@@ -1,246 +1,188 @@
-.section {
-    background-color: var(--white);
-    color: var(--primary-color);
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    scroll-snap-align: start;
-    position: relative;
-    flex-direction: column;
-    z-index: 2;
-    padding-bottom: 2vw;
+.hero {
+  background: var(--sand);
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-block: 40px 64px;
 }
 
 .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto 0;
-    gap: 24px;
+  padding-block: 64px var(--section);
 }
 
-.main > h1 {
-    font-size: var(--font-size-lg);
-}
-.main > h2 {
-    font-size: var(--font-size-xl);
-}
-
-.main > h3 {
-    text-align: center;
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px;
 }
 
-.group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    width: 100%;
+.infos {
+  flex: 1 1 520px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.row {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;    
-    justify-content: center;    
+.pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
 }
 
-.row > .label,
-.row > .value {
-    font-size: var(--font-size-base);
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 16px;
 }
 
-.rowCalendar {
-    --min-width: 300px;
-    align-items: center;
-    min-width: var(--min-width);
-    justify-content: space-between;
+.price {
+  font-family: var(--serif);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--ink);
 }
 
-.rowCalendar > .label {
-    position: relative;
-    text-align: right;
+.small {
+  font-size: 14px;
+  color: var(--muted);
 }
 
-.rowCalendar > .value:before {
-    content: "";
-    position: absolute;
-    left: calc(var(--min-width) / -4);
-    background-color: var(--primary-color);
-    height: 100%;
-    width: 3px;
+.address {
+  font-style: normal;
+  font-size: 17px;
+  line-height: 1.6;
 }
 
-.rowCalendar.saturday > .value:before {
-    left: calc(calc(var(--min-width) / -4) - 3px);
+.address strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
 }
 
-.rowCalendar.sunday > .value:before {
-    left: calc(calc(var(--min-width) / -4) + 5px);
+.map {
+  overflow: hidden;
+  border-radius: 18px;
 }
 
-.rowCalendar > .value {
-    font-size: var(--font-size-base);
-    position: relative;
+.mapPlaceholder {
+  height: 280px;
+  background: #e8eeec;
 }
 
-.rowAddress {
-    font-size: var(--font-size-md);
+.bus {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.today {
-    background-color: var(--secondary-color);
+.bus h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
 }
 
-
-.group > h3 {
-    font-size: var(--font-size-lg);
-    text-align: center;
+.bus ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 14px;
 }
 
-.group > h4 {
-    font-size: var(--font-size-md);
+.bus li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px 6px 6px;
+  border-radius: 999px;
+  background: var(--sand);
 }
 
-.sunday > .value {
-    padding: 0 20px;
+.line {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--teal);
+  font-weight: 600;
+  color: var(--white);
 }
 
-.busInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+.photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
 }
 
-.rowBus {
-    display: flex;
-    align-items: center;
-    align-self: baseline;
+.photos img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 18px;
 }
 
-.rowBus > .value {
-    font-size: var(--font-size-base);
+.booking {
+  flex: 1 1 400px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: clamp(24px, 3vw, 40px);
+  border-radius: 26px;
+  background: var(--sand);
+  scroll-margin-top: 96px;
 }
 
-.row > .labelNum {
-    height: 24px;
-    width: 24px;
-    background-color: hsl(15.65,73.25%,69.22%);
-    color: var(--white);
-    border-radius: 50%;
-    padding: 0 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: system-ui;
+.phone {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: var(--teal);
+  color: var(--white);
+  text-decoration: none;
 }
 
-.row > .labelNum2 {
-    background-color: hsl(243.33,29.67%,64.31%);
+.phone:hover {
+  background: var(--teal-dark);
+  color: var(--white);
 }
 
-.row > .labelNum3 {
-    background-color: hsl(55.15,96.12%,79.8%);
-    color: var(--black);
+.phoneIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
 }
 
-.row > .labelNum5 {
-    background-color: hsl(197.57,86.6%,59.02%);
-    color: var(--black);
+.phoneLabel {
+  display: block;
+  font-size: 14px;
+  color: #cfe2e0;
 }
 
-.slider {
-    --aspect-ratio: 614 / 412;
-    --slide-speed: 10s;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    width: 65vw;
-    max-width: 614px;
-    height: auto;
-    aspect-ratio: var(--aspect-ratio);
+.phoneNumber {
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
-
-.slider > .image {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    object-fit: cover;
-    height: auto;
-    aspect-ratio: var(--aspect-ratio);
-}
-
-.slider > .image:nth-child(2) {
-    animation: fade  var(--slide-speed) calc(var(--slide-speed) / 4) infinite;
-}
-
-.openingHours {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-    justify-content: center;
-}
-
-@keyframes fade {
-    0% {
-        opacity: 1;
-    }
-    40% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    90% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-
-@media (max-width: 768px) {
-    .section {
-        padding-bottom: 20vw;
-    }
-
-    .main {
-        margin-top: 5vh;
-    }
-
-    .rowCalendar {
-        min-width: 160px;
-    }
-
-    .rowCalendar > .value:before {
-        left: -20px;
-    }
-    
-    .rowCalendar.saturday > .value:before {
-        left: -23px;
-    }
-    
-    .rowCalendar.sunday > .value:before {
-        left: -11px;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    .section {
-      background-color: var(--primary-color-black); 
-      color: var(--white);
-    }
-
-    .today {
-        background-color: var(--primary-color);
-    }
-
-    .today > .value:before {
-        background-color: var(--white);
-    }
-  }
-  

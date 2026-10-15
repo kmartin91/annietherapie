@@ -1,0 +1,173 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--white);
+  box-shadow: 0 1px 0 var(--line-light);
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Au-dessus de la vidéo de l'accueil. */
+.overlay {
+  background: transparent;
+  box-shadow: none;
+}
+
+.overlay .name,
+.overlay .nav a {
+  color: var(--white);
+}
+
+.overlay .nav a:hover {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.overlay .burger {
+  border-color: rgba(255, 255, 255, 0.55);
+  background: transparent;
+  color: var(--white);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 16px 32px;
+  min-height: var(--header-h);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand:hover {
+  color: var(--ink);
+}
+
+/* Le « logo », comme sur le site d'origine : Cormorant 300 épaissi par le
+   navigateur, nom en capitales pour son Q. */
+.name {
+  font-family: var(--serif-light);
+  font-size: var(--fs-origin-base);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.surname {
+  text-transform: uppercase;
+}
+
+
+.nav {
+  display: none;
+  gap: 28px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover,
+.nav a[aria-current] {
+  color: var(--teal);
+}
+
+.nav a[aria-current] {
+  font-weight: 600;
+}
+
+.header .cta {
+  display: none;
+}
+
+.burger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #d8dfdd;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.mobile {
+  position: fixed;
+  inset: var(--header-h) 0 0;
+  overflow-y: auto;
+  padding: 16px var(--gutter) calc(32px + env(safe-area-inset-bottom, 0px));
+  background: var(--white);
+  border-top: 1px solid var(--line-light);
+  animation: menuIn 0.25s ease;
+}
+
+@keyframes menuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileNav a {
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+  border-bottom: 1px solid var(--line-light);
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.mobileNav a[aria-current] {
+  color: var(--teal);
+}
+
+.mobileActions {
+  display: grid;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile {
+    animation: none;
+  }
+}
+
+@media (min-width: 1100px) {
+  .nav,
+  .header .cta {
+    display: flex;
+  }
+
+  .burger,
+  .mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .name {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,51 @@
+.bar {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  z-index: 40;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 999px;
+  background: var(--white);
+  box-shadow: 0 14px 34px -14px rgba(28, 43, 45, 0.45);
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+    opacity 0.35s ease;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(140%);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    transition: none;
+  }
+}
+
+.call {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--sand-strong);
+  color: var(--teal);
+}
+
+.book {
+  flex: 1;
+  min-height: 48px;
+}
+
+@media (min-width: 760px) {
+  .bar {
+    display: none;
+  }
+}

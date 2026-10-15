@@ -22,9 +22,9 @@ const Map: React.FC = (): ReactElement => {
       />
       <Marker position={position}>
         <Popup>
-          Annie MAQUET
+          Annie Maquet, psychopraticienne
           <br />
-          48 Rue Alsace Lorraine
+          48 rue Alsace Lorraine
           <br /> 17200 Royan
         </Popup>
       </Marker>
