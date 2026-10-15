@@ -2,7 +2,8 @@ import { ReactElement, useEffect, useRef } from "react";
 
 // Les vagues de la côte royannaise, comme sur le site d'origine : ralenties,
 // sans son, image fixe tant que la vidéo charge, et à l'arrêt si le visiteur
-// a demandé moins d'animations.
+// a demandé moins d'animations. Version recadrée en hauteur (plus légère)
+// sur téléphone.
 const HeroVideo = ({ className }: { className?: string }): ReactElement => {
   const ref = useRef<HTMLVideoElement>(null);
 
@@ -31,14 +32,16 @@ const HeroVideo = ({ className }: { className?: string }): ReactElement => {
     <video
       ref={ref}
       className={className}
-      src="/media/vagues-royan.mp4"
-      poster="/media/vagues-royan.jpg"
+      poster="/media/vagues-royan-large.jpg"
       muted
       loop
       playsInline
       preload="metadata"
       aria-hidden="true"
-    />
+    >
+      <source src="/media/vagues-royan.mp4" type="video/mp4" media="(max-width: 700px)" />
+      <source src="/media/vagues-royan-large.mp4" type="video/mp4" />
+    </video>
   );
 };
 

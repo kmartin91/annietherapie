@@ -1,24 +1,120 @@
-/* ---- Hero ---- */
+/* ---- Hero : vidéo plein écran, sous l'en-tête ---- */
 
 .hero {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin-top: calc(-1 * var(--header-h));
   overflow: hidden;
+  background: #23403f;
+  color: var(--white);
+}
+
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.veil {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 30, 31, 0.5);
 }
 
 .heroInner {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding-block: calc(var(--header-h) + 40px) 32px;
+  text-align: center;
+}
+
+.heroTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--serif);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.005em;
+  color: var(--white);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
+}
+
+.heroLine {
+  font-size: clamp(42px, 5.4vw, 78px);
+}
+
+.heroSub {
+  font-size: clamp(26px, 2.6vw, 38px);
+}
+
+.heroCtas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.quote {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 var(--gutter) 40px;
+  text-align: center;
+  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.6s both;
+}
+
+.quote blockquote {
+  font-family: var(--serif);
+  font-size: clamp(17px, 1.4vw, 20px);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--white);
+}
+
+.quote figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quote {
+    animation: none;
+  }
+}
+
+/* ---- Présentation ---- */
+
+.intro {
+  padding-block: clamp(64px, 8vw, 96px);
+}
+
+.introInner {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 56px;
-  padding-block: clamp(40px, 6vw, 72px) clamp(64px, 8vw, 96px);
+  gap: 48px 72px;
 }
 
-.heroCopy {
-  flex: 1 1 520px;
+.introCopy {
+  flex: 1 1 560px;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 22px;
 }
 
 .place {
@@ -41,106 +137,37 @@
 }
 
 .tealIcon {
+  flex: 0 0 auto;
   color: var(--teal);
 }
 
 .facts {
+  flex: 1 1 340px;
+  min-width: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 14px 32px;
-  margin-top: 8px;
-  padding-top: 22px;
-  border-top: 1px solid var(--line-light);
-  font-size: 15px;
-  color: var(--muted);
+  flex-direction: column;
+  border-top: 1px solid var(--line);
 }
 
 .facts li {
   display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.facts strong {
-  font-weight: 600;
-  color: var(--ink);
-}
-
-.heroVisual {
-  flex: 1 1 420px;
-  min-width: 0;
-  position: relative;
-  padding: 28px 0 40px 28px;
-}
-
-.heroRose {
-  left: 0;
-  bottom: 0;
-  width: 240px;
-  height: 240px;
-  border-radius: 0 240px 0 0;
-}
-
-.heroSage {
-  right: -24px;
-  top: 0;
-  width: 180px;
-  height: 90px;
-  border-radius: 180px 180px 0 0;
-}
-
-.video {
-  position: relative;
-  width: 100%;
-  max-width: 520px;
-  aspect-ratio: 5 / 6;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-  background: #2c4b4c;
-  animation: reveal 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-
-@keyframes reveal {
-  from {
-    opacity: 0;
-    transform: scale(0.97);
-  }
-}
-
-.quote {
-  position: absolute;
-  right: 0;
-  bottom: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  max-width: 300px;
-  padding: 18px 22px;
-  border-radius: 18px;
-  background: var(--white);
-  box-shadow: var(--shadow);
-  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.6s both;
-}
-
-.quote blockquote {
-  font-family: var(--serif);
-  font-size: 20px;
-  font-style: italic;
-  font-weight: 500;
-  line-height: 1.3;
-  color: var(--ink);
-}
-
-.quote figcaption {
-  font-size: 13px;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
   color: var(--muted);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .video,
-  .quote {
-    animation: none;
-  }
+.facts li svg {
+  margin-top: 2px;
+}
+
+.facts strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
 }
 
 /* ---- Sections à deux colonnes ---- */
@@ -521,47 +548,14 @@
 /* ---- Téléphone ---- */
 
 @media (max-width: 640px) {
-  .ctas {
+  .ctas,
+  .heroCtas {
     display: grid;
     width: 100%;
   }
 
-  .facts {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .heroVisual {
-    padding: 20px 0 0 20px;
-  }
-
-  .heroRose {
-    width: 170px;
-    height: 170px;
-    border-radius: 0 170px 0 0;
-    bottom: 40px;
-  }
-
-  .heroSage {
-    right: 0;
-    width: 110px;
-    height: 55px;
-  }
-
-  .video {
-    aspect-ratio: 4 / 5;
-  }
-
-  .quote {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    max-width: none;
-    margin: -56px 16px 0;
-  }
-
-  .quote blockquote {
-    font-size: 18px;
+  .heroInner {
+    gap: 28px;
   }
 
   .split {

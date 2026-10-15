@@ -67,23 +67,53 @@ export default function Home() {
     <>
       <Seo title={TITLE} description={DESCRIPTION} path="/" jsonLd={jsonLd} />
 
-      {/* Hero */}
+      {/* Hero : la vidéo plein écran du site d’origine */}
       <section className={styles.hero} aria-labelledby="hero-title">
+        <HeroVideo className={styles.video} />
+        <div className={styles.veil} aria-hidden="true" />
         <div className={`container ${styles.heroInner}`}>
-          <div className={styles.heroCopy}>
-            <p className={`${styles.place} rise`}>
+          <h1 id="hero-title" className={styles.heroTitle}>
+            <span className={`${styles.heroLine} rise`}>Cabinet de psychothérapie</span>{" "}
+            <span className={`${styles.heroSub} rise`} style={{ animationDelay: "120ms" }}>
+              Gestalt thérapie
+            </span>{" "}
+            <span className={`${styles.heroLine} rise`} style={{ animationDelay: "240ms" }}>
+              Royan
+            </span>
+          </h1>
+          <div className={`${styles.heroCtas} rise`} style={{ animationDelay: "360ms" }}>
+            <Link href={APPOINTMENT_HREF} className="btn btn--light">
+              Prendre rendez-vous
+            </Link>
+            <a href="#annie-maquet" className="btn btn--ghost-light">
+              En savoir plus
+            </a>
+          </div>
+        </div>
+        <figure className={styles.quote}>
+          <blockquote>
+            « L’homme ne peut découvrir de nouveaux océans tant qu’il n’a pas le courage de perdre de vue la côte. »
+          </blockquote>
+          <figcaption>André Gide</figcaption>
+        </figure>
+      </section>
+
+      {/* Présentation : le texte et les infos clés */}
+      <section id="annie-maquet" className={styles.intro} aria-labelledby="intro-title">
+        <div className={`container ${styles.introInner}`}>
+          <div className={styles.introCopy}>
+            <p className={styles.place}>
               <Icon name="pin" size={16} />
               Cabinet au centre-ville de Royan
             </p>
-            <h1 id="hero-title" className="title-xl rise" style={{ animationDelay: "80ms" }}>
-              Psychopraticienne en Gestalt thérapie à Royan
-            </h1>
-            <p className="lead rise" style={{ animationDelay: "160ms", maxWidth: "34em" }}>
-              Je m’appelle Annie Maquet. J’accompagne les adultes en séance individuelle, dans un cadre confidentiel et
-              sans jugement, pour traverser ce qui fait souffrir et remettre du mouvement là où les choses se sont
-              figées.
+            <h2 id="intro-title" className="title-l">
+              Annie Maquet, psychopraticienne en Gestalt thérapie à Royan
+            </h2>
+            <p className="lead">
+              J’accompagne les adultes en séance individuelle, dans un cadre confidentiel et sans jugement, pour
+              traverser ce qui fait souffrir et remettre du mouvement là où les choses se sont figées.
             </p>
-            <div className={`${styles.ctas} rise`} style={{ animationDelay: "240ms" }}>
+            <div className={styles.ctas}>
               <Link href={APPOINTMENT_HREF} className="btn btn--primary">
                 Prendre rendez-vous
                 <Icon name="arrow" size={18} className="arrow" />
@@ -93,39 +123,37 @@ export default function Home() {
                 {PHONE.display}
               </a>
             </div>
-            <ul className={`${styles.facts} rise`} style={{ animationDelay: "320ms" }}>
-              <li>
-                <Icon name="clock" className={styles.tealIcon} />
-                <span>
-                  <strong>Séance d’une heure</strong> · {SESSION.price} €
-                </span>
-              </li>
-              <li>
-                <Icon name="calendar" className={styles.tealIcon} />
-                <span>
-                  <strong>Du lundi au jeudi</strong>, sur rendez-vous
-                </span>
-              </li>
-              <li>
-                <Icon name="badge" className={styles.tealIcon} />
-                <span>
-                  <strong>{PRACTITIONER.certification}</strong>, {PRACTITIONER.school.shortName}
-                </span>
-              </li>
-            </ul>
           </div>
-
-          <div className={styles.heroVisual}>
-            <span className={`shape shape--rose ${styles.heroRose}`} aria-hidden="true" />
-            <span className={`shape shape--sage ${styles.heroSage}`} aria-hidden="true" />
-            <HeroVideo className={styles.video} />
-            <figure className={styles.quote}>
-              <blockquote>
-                « L’homme ne peut découvrir de nouveaux océans tant qu’il n’a pas le courage de perdre de vue la côte.{"\u00a0"}»
-              </blockquote>
-              <figcaption>André Gide</figcaption>
-            </figure>
-          </div>
+          <ul className={styles.facts}>
+            <li>
+              <Icon name="clock" className={styles.tealIcon} />
+              <span>
+                <strong>Séance d’une heure</strong>
+                {SESSION.price} €, pour adultes
+              </span>
+            </li>
+            <li>
+              <Icon name="calendar" className={styles.tealIcon} />
+              <span>
+                <strong>Du lundi au jeudi</strong>
+                sur rendez-vous
+              </span>
+            </li>
+            <li>
+              <Icon name="badge" className={styles.tealIcon} />
+              <span>
+                <strong>{PRACTITIONER.certification}</strong>
+                formée à l’{PRACTITIONER.school.shortName}
+              </span>
+            </li>
+            <li>
+              <Icon name="pin" className={styles.tealIcon} />
+              <span>
+                <strong>{ADDRESS.street}</strong>
+                ascenseur, accès PMR
+              </span>
+            </li>
+          </ul>
         </div>
       </section>
 

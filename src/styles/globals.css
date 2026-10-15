@@ -25,6 +25,7 @@
   --container: 1200px;
   --gutter: clamp(20px, 4vw, 48px);
   --section: clamp(72px, 9vw, 104px);
+  --header-h: 76px;
 
   --serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
   --sans: var(--font-figtree), "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -39,7 +40,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  scroll-padding-top: 96px;
+  scroll-padding-top: calc(var(--header-h) + 20px);
 }
 
 body {

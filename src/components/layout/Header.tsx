@@ -10,6 +10,25 @@ import styles from "./Header.module.css";
 const Header = (): ReactElement => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
+  const isHome = router.pathname === "/";
+  // Accueil : en-tête transparent au-dessus de la vidéo, blanc une fois passé.
+  const [overHero, setOverHero] = useState(true);
+
+  useEffect(() => {
+    if (!isHome) {
+      return undefined;
+    }
+    const update = () => setOverHero(window.scrollY < window.innerHeight - 90);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, [isHome]);
+
+  const overlay = isHome && overHero && !open;
 
   useEffect(() => {
     const close = () => setOpen(false);
@@ -31,7 +50,7 @@ const Header = (): ReactElement => {
   const isCurrent = (href: string) => router.pathname === href;
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${overlay ? styles.overlay : ""}`}>
       <div className={`container ${styles.inner}`}>
         <Link href="/" className={styles.brand} aria-label="Annie Maquet, psychopraticienne à Royan : accueil">
           <span className={styles.name}>Annie Maquet</span>

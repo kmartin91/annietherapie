@@ -3,14 +3,44 @@
   top: 0;
   z-index: 50;
   background: var(--white);
-  border-bottom: 1px solid var(--line-light);
+  box-shadow: 0 1px 0 var(--line-light);
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Au-dessus de la vidéo de l'accueil. */
+.overlay {
+  background: transparent;
+  box-shadow: none;
+}
+
+.overlay .name,
+.overlay .nav a {
+  color: var(--white);
+}
+
+.overlay .tagline {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.overlay .nav a:hover {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.overlay .burger {
+  border-color: rgba(255, 255, 255, 0.55);
+  background: transparent;
+  color: var(--white);
 }
 
 .inner {
   display: flex;
   align-items: center;
   gap: 16px 32px;
-  min-height: 76px;
+  min-height: var(--header-h);
 }
 
 .brand {
@@ -80,7 +110,7 @@
 
 .mobile {
   position: fixed;
-  inset: 76px 0 0;
+  inset: var(--header-h) 0 0;
   overflow-y: auto;
   padding: 16px var(--gutter) calc(32px + env(safe-area-inset-bottom, 0px));
   background: var(--white);
