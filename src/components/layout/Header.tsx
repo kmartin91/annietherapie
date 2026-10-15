@@ -55,9 +55,7 @@ const Header = (): ReactElement => {
         <Link href="/" className={styles.brand} aria-label="Annie Maquet, psychopraticienne à Royan : accueil">
           <span className={styles.name}>
             Annie <span className={styles.surname}>Maquet</span>
-          </span>
-          <span className={styles.tagline}>
-            Psychopraticienne<span className={styles.taglineLong}> · Gestalt thérapie</span> · Royan
+            <span> – Psychopraticienne</span>
           </span>
         </Link>
 

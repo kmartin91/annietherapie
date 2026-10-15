@@ -10,7 +10,7 @@ import { APPOINTMENT_HREF, PHONE, SESSION, telHref } from "@/lib/site";
 import styles from "styles/pages/gestalt.module.css";
 
 const PATH = "/gestalt-therapie-royan";
-const TITLE = "La Gestalt thérapie à Royan | Annie Maquet, psychopraticienne";
+const TITLE = "Gestalt thérapie à Royan | Annie Maquet, psychopraticienne";
 const DESCRIPTION =
   "Qu’est-ce que la Gestalt thérapie ? Origines, travail sur le contact et sur le corps, déroulement d’une séance au cabinet d’Annie Maquet, à Royan.";
 

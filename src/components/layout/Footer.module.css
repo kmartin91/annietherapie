@@ -19,16 +19,15 @@
 }
 
 .name {
-  font-family: var(--serif);
-  font-size: 28px;
-  font-weight: 500;
-  line-height: 1;
+  font-family: var(--serif-light);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.1;
   color: var(--ink);
 }
 
 .surname {
   text-transform: uppercase;
-  letter-spacing: 0.03em;
 }
 
 .links {

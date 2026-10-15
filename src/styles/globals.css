@@ -28,6 +28,11 @@
   --header-h: 76px;
 
   --serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --serif-light: var(--font-cormorant-light), "Cormorant Garamond", Georgia, serif;
+  /* Échelle du site d'origine (logo, citation, titre de la vidéo). */
+  --fs-origin-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  --fs-origin-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --fs-origin-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
   --sans: var(--font-figtree), "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 

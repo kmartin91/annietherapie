@@ -11,18 +11,19 @@ import "styles/globals.css";
 // Polices auto-hébergées par next/font : titres en Cormorant Garamond (celle
 // du site d'origine, en semi-gras), texte courant en Figtree.
 const cormorant = Cormorant_Garamond({
-  weight: ["500", "600"],
+  weight: "600",
   subsets: ["latin"],
   display: "swap",
 });
 
-// Italique : seulement pour la citation, chargé sans préchargement.
-const cormorantItalic = Cormorant_Garamond({
-  weight: "500",
-  style: "italic",
+// Le rendu du site d'origine, gardé pour le logo, le titre de la vidéo et la
+// citation : uniquement la graisse 300, affichée en 700 (le navigateur
+// l'épaissit lui-même) et en italique simulé. Famille séparée exprès, pour
+// qu'aucune vraie graisse grasse ne la remplace.
+const cormorantLight = Cormorant_Garamond({
+  weight: "300",
   subsets: ["latin"],
   display: "swap",
-  preload: false,
 });
 
 const figtree = Figtree({
@@ -43,7 +44,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <style jsx global>{`
         :root {
           --font-cormorant: ${cormorant.style.fontFamily};
-          --font-cormorant-italic: ${cormorantItalic.style.fontFamily};
+          --font-cormorant-light: ${cormorantLight.style.fontFamily};
           --font-figtree: ${figtree.style.fontFamily};
         }
       `}</style>

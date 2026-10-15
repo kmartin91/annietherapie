@@ -20,10 +20,6 @@
   color: var(--white);
 }
 
-.overlay .tagline {
-  color: rgba(255, 255, 255, 0.82);
-}
-
 .overlay .nav a:hover {
   color: var(--white);
   text-decoration: underline;
@@ -55,25 +51,19 @@
   color: var(--ink);
 }
 
-/* Le « logo » : Cormorant Garamond, nom en capitales pour son Q. */
+/* Le « logo », comme sur le site d'origine : Cormorant 300 épaissi par le
+   navigateur, nom en capitales pour son Q. */
 .name {
-  font-family: var(--serif);
-  font-size: 28px;
-  font-weight: 500;
-  line-height: 1;
+  font-family: var(--serif-light);
+  font-size: var(--fs-origin-base);
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .surname {
   text-transform: uppercase;
-  letter-spacing: 0.03em;
 }
 
-.tagline {
-  margin-top: 4px;
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  color: var(--muted);
-}
 
 .nav {
   display: none;
@@ -178,14 +168,6 @@
 
 @media (max-width: 560px) {
   .name {
-    font-size: 25px;
-  }
-
-  .tagline {
-    font-size: 12px;
-  }
-
-  .taglineLong {
-    display: none;
+    font-size: 16px;
   }
 }
