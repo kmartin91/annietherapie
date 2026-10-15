@@ -1,0 +1,33 @@
+.list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 20px;
+  font-size: 16px;
+}
+
+.row {
+  display: contents;
+}
+
+.day {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.hours {
+  text-align: right;
+}
+
+.closed {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.today {
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.todayTag {
+  font-weight: 500;
+}

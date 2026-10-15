@@ -1,0 +1,63 @@
+.footer {
+  border-top: 1px solid var(--line-light);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 64px;
+  padding-block: 56px 28px;
+}
+
+.about {
+  flex: 2 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.name {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.links {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.links a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: var(--teal);
+}
+
+.hours {
+  flex: 1 1 220px;
+}
+
+.hoursTitle {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  padding-block: 18px 32px;
+  font-size: 13px;
+  color: var(--muted);
+}

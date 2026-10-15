@@ -1,0 +1,14 @@
+.layout {
+  /* Place pour la barre d'action fixe sur téléphone. */
+  padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+}
+
+.main {
+  outline: none;
+}
+
+@media (min-width: 760px) {
+  .layout {
+    padding-bottom: 0;
+  }
+}

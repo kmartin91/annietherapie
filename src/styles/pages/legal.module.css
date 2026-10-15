@@ -1,0 +1,13 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: calc(780px + 2 * var(--gutter));
+  padding-block: 40px var(--section);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.page h2 {
+  margin-top: 24px;
+}

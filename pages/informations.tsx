@@ -1,244 +1,132 @@
-import { Cormorant_Garamond } from "@next/font/google";
 import dynamic from "next/dynamic";
-import Head from "next/head";
 import Image from "next/image";
-import Script from "next/script";
-import { ReactElement, Fragment } from "react";
 
-import Button from "components/button/default/Button";
-import Header from "components/header/Header";
+import ContactForm from "components/contact-form/ContactForm";
+import Breadcrumbs from "components/ui/Breadcrumbs";
+import Hours from "components/ui/Hours";
+import Icon from "components/ui/Icon";
+import Seo from "components/ui/Seo";
+import { breadcrumbJsonLd, graph, webPageJsonLd } from "@/lib/seo";
+import { ADDRESS, BUS_LINES, PHONE, SESSION, telHref } from "@/lib/site";
 
-import Cabinet1 from "images/cabinet1.jpg";
-import Cabinet2 from "images/cabinet2.jpg";
-
-import commonStyles from "sections/common/section.module.css";
 import styles from "styles/pages/informations.module.css";
 
-const cormorant = Cormorant_Garamond({
-  weight: "300",
-  subsets: ["latin"],
-  display: "swap",
+// Leaflet a besoin du navigateur : la carte est chargée côté client.
+const OpenStreetMap = dynamic(() => import("components/map/Map"), {
+  ssr: false,
+  loading: () => <div className={styles.mapPlaceholder} aria-hidden="true" />,
 });
 
-const images = [
-  <Image
-    key="image1"
-    src={Cabinet1}
-    alt="Cabinet de Psychothérapie - Royan - Charente-Maritime"
-    className={styles.image}
-  />,
-  <Image
-    key="image2"
-    src={Cabinet2}
-    alt="Cabinet de Psychothérapie - Royan - Charente-Maritime"
-    className={styles.image}
-  />,
+const PATH = "/informations";
+const TITLE = "Infos pratiques et rendez-vous à Royan | Annie Maquet";
+const DESCRIPTION =
+  "Tarif, horaires, adresse et accès du cabinet de Gestalt thérapie d’Annie Maquet à Royan : 48 rue Alsace Lorraine, ascenseur, accès PMR. Prise de rendez-vous.";
+
+const crumbs = [
+  { name: "Accueil", path: "/" },
+  { name: "Infos pratiques", path: PATH },
 ];
 
-const Tarif: React.FC = (): ReactElement => {
-  const OpenStreetMap = dynamic(() => import("components/map/Map"), {
-    ssr: false,
-  });
+const jsonLd = graph(webPageJsonLd(PATH, TITLE, DESCRIPTION), breadcrumbJsonLd(crumbs));
 
-  const currentDay = new Date().getDay();
-  const isSaturday = currentDay === 6;
-  const isSunday = currentDay === 0;
-  const isFriday = currentDay === 5;
-  const isThursday = currentDay === 4;
-
+export default function Informations() {
   return (
     <>
-      <Head>
-        <title>
-          Annie MAQUET - Psychopraticienne / Gestalt Thérapie | Informations
-          Pratiques
-        </title>
-        <meta
-          name="description"
-          content="Trouvez nos horaires, tarifs, et informations de contact pour prendre rendez-vous au cabinet de psychothérapie, gestalt thérapie à Royan."
-        />
-      </Head>
+      <Seo title={TITLE} description={DESCRIPTION} path={PATH} jsonLd={jsonLd} />
 
-      <div className={`${cormorant.className} ${commonStyles.container}`}>
-        <section className={styles.section}>
-          <Header />
+      <section className={styles.hero} aria-labelledby="page-title">
+        <div className={`container ${styles.heroInner}`}>
+          <Breadcrumbs items={crumbs} />
+          <h1 id="page-title" className="title-xl rise">
+            Infos pratiques et rendez-vous
+          </h1>
+          <p className="lead rise" style={{ animationDelay: "100ms", maxWidth: "40em" }}>
+            Le cabinet se trouve au centre-ville de Royan, au premier étage avec ascenseur. Les séances ont lieu sur
+            rendez-vous, du lundi au jeudi.
+          </p>
+        </div>
+      </section>
 
-          <div className={styles.main}>
-            <h2>Informations pratiques</h2>
-
-            <div
-              className={styles.group}
-              itemScope
-              itemType="https://schema.org/LocalBusiness"
-            >
-              <h3>Tarif</h3>
-              <div className={styles.row} itemProp="priceRange">
-                <div className={styles.label}>Séance individuelle (1h)</div>
-                <div className={styles.value}>60€</div>
+      <section className={styles.main}>
+        <div className={`container ${styles.layout}`}>
+          <div className={styles.infos}>
+            <div className={styles.pair}>
+              <div className={styles.card}>
+                <h2 className="label">Tarif</h2>
+                <p className={styles.price}>{SESSION.price} €</p>
+                <p>la séance individuelle d’une heure</p>
+                <p className={styles.small}>
+                  Non remboursée par l’Assurance maladie ; certaines mutuelles prévoient un forfait.
+                </p>
               </div>
-            </div>
-            <div
-              itemScope
-              itemType="https://schema.org/LocalBusiness"
-              className={styles.group}
-            >
-              <h3>Horaires</h3>
-              <div itemProp="openingHours" className={styles.openingHours}>
-                {["lundi", "mardi", "mercredi"].map((day, index) => {
-                  const isCurrentDay = index + 1 === currentDay;
-                  const rowClassName = [
-                    styles.row,
-                    styles.rowCalendar,
-                    isCurrentDay && styles.today,
-                  ]
-                    .filter(Boolean)
-                    .join(" ");
-                  return (
-                    <div key={day} className={rowClassName}>
-                      <div className={styles.label}>{day}</div>
-                      <div className={styles.value}>10h - 19h00</div>
-                    </div>
-                  );
-                })}
-
-                <div
-                  className={[
-                    styles.row,
-                    styles.rowCalendar,
-                    isThursday && styles.today,
-                  ]
-                    .filter(Boolean)
-                    .join(" ")}
-                >
-                  <div className={styles.label}>jeudi</div>
-                  <div className={styles.value}>13h - 19h00</div>
-                </div>
-                <div
-                  className={[
-                    styles.row,
-                    styles.rowCalendar,
-                    isFriday && styles.today,
-                    styles.sunday,
-                  ]
-                    .filter(Boolean)
-                    .join(" ")}
-                >
-                  <div className={styles.label}>vendredi</div>
-                  <div className={styles.value}>fermé</div>
-                </div>
-                <div
-                  className={[
-                    styles.row,
-                    styles.rowCalendar,
-                    isSaturday && styles.today,
-                    styles.sunday,
-                  ]
-                    .filter(Boolean)
-                    .join(" ")}
-                >
-                  <div className={styles.label}>samedi</div>
-                  <div className={styles.value}>fermé</div>
-                </div>
-                <div
-                  className={[
-                    styles.row,
-                    styles.rowCalendar,
-                    isSunday && styles.today,
-                    styles.sunday,
-                  ]
-                    .filter(Boolean)
-                    .join(" ")}
-                >
-                  <div className={styles.label}>dimanche</div>
-                  <div className={styles.value}>fermé</div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.slider}>
-              {images.map((src) => (
-                <Fragment key={src.key}>{src}</Fragment>
-              ))}
-            </div>
-            <div
-              className={styles.group}
-              itemScope
-              itemType="https://schema.org/Place"
-            >
-              <h3>Se rendre au cabinet de Psychothérapie</h3>
-              <div className={`${styles.row} ${styles.rowAddress}`}>
-                <div className={styles.label} />
-                <div className={styles.value} itemProp="address">
-                  <p>48 rue Alsace Lorraine</p>
-                  <p>17200 Royan</p>
-                  <p>Charente-Maritime</p>
-                </div>
-              </div>
-              <div className={styles.row}>
-                Premier étage avec ascenseur
-                <br />
-                Conforme aux normes PMR ♿
-              </div>
-
-              <h4>Accès transport en commun Cara&apos;Bus</h4>
-
-              <div className={styles.busInfo}>
-                <div className={`${styles.row} ${styles.rowBus}`}>
-                  <div className={`${styles.label} ${styles.labelNum}`}>1</div>
-                  <div className={styles.value}>Arrêt De Gaulle</div>
-                </div>
-                <div className={`${styles.row} ${styles.rowBus}`}>
-                  <div
-                    className={`${styles.label} ${styles.labelNum} ${styles.labelNum2}`}
-                  >
-                    2
-                  </div>
-
-                  <div className={styles.value}>Arrêt Chevalier</div>
-                </div>
-                <div className={`${styles.row} ${styles.rowBus}`}>
-                  <div
-                    className={`${styles.label} ${styles.labelNum} ${styles.labelNum3}`}
-                  >
-                    3
-                  </div>
-                  <div className={styles.value}>Arrêt Loti</div>
-                </div>
-                <div className={`${styles.row} ${styles.rowBus}`}>
-                  <div
-                    className={`${styles.label} ${styles.labelNum} ${styles.labelNum3}`}
-                  >
-                    3
-                  </div>
-                  <div className={styles.value}>Arrêt Font Cherves</div>
-                </div>
-                <div className={`${styles.row} ${styles.rowBus}`}>
-                  <div
-                    className={`${styles.label} ${styles.labelNum} ${styles.labelNum3}`}
-                  >
-                    3
-                  </div>
-                  <div className={styles.value}>Arrêt Notre Dame</div>
-                </div>
-                <div className={`${styles.row} ${styles.rowBus}`}>
-                  <div
-                    className={`${styles.label} ${styles.labelNum} ${styles.labelNum5}`}
-                  >
-                    5
-                  </div>
-                  <div className={styles.value}>Arrêt St-Pierre</div>
-                </div>
+              <div className={styles.card}>
+                <h2 className="label">Horaires</h2>
+                <Hours />
               </div>
             </div>
 
-            <OpenStreetMap />
-            <Button className={commonStyles.buttonMain} href="/contact">
-              Contact
-            </Button>
+            <div className={styles.card}>
+              <h2 className="label">Adresse et accès</h2>
+              <address className={styles.address}>
+                <strong>
+                  {ADDRESS.street}
+                  <br />
+                  {ADDRESS.postalCode} {ADDRESS.city}
+                </strong>
+                {ADDRESS.access}
+              </address>
+              <div className={styles.map}>
+                <OpenStreetMap />
+              </div>
+              <div className={styles.bus}>
+                <h3>En bus Cara’Bus</h3>
+                <ul>
+                  {BUS_LINES.map((bus) => (
+                    <li key={bus.line}>
+                      <span className={styles.line} aria-label={`Ligne ${bus.line}`}>
+                        {bus.line}
+                      </span>
+                      {bus.stops}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className={styles.photos}>
+              <Image
+                src="/images/cabinet1.jpg"
+                alt="Le cabinet : canapé, fauteuil et table basse sur un tapis aux couleurs douces"
+                width={614}
+                height={472}
+                sizes="(max-width: 900px) 46vw, 300px"
+              />
+              <Image
+                src="/images/cabinet2.jpg"
+                alt="Le coin fauteuil du cabinet, près de la fenêtre"
+                width={614}
+                height={480}
+                sizes="(max-width: 900px) 46vw, 300px"
+              />
+            </div>
           </div>
-        </section>
-      </div>
+
+          <div id="rendez-vous" className={styles.booking}>
+            <h2 className="title-m">Demander un rendez-vous</h2>
+            <a href={telHref} className={styles.phone}>
+              <span className={styles.phoneIcon}>
+                <Icon name="phone" size={20} />
+              </span>
+              <span>
+                <span className={styles.phoneLabel}>Par téléphone</span>
+                <span className={styles.phoneNumber}>{PHONE.display}</span>
+              </span>
+            </a>
+            <p className="muted">Ou écrivez-moi, je vous réponds rapidement :</p>
+            <ContactForm />
+          </div>
+        </div>
+      </section>
     </>
   );
-};
-
-export default Tarif;
+}
