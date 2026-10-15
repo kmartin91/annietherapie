@@ -23,9 +23,28 @@ const HeroVideo = ({ className }: { className?: string }): ReactElement => {
       video.play().catch(() => undefined);
     };
 
-    apply();
+    // La vidéo ne se télécharge qu'une fois la page chargée : elle ne retarde
+    // pas l'affichage du texte (l'image fixe est là en attendant).
+    let started = false;
+    const start = () => {
+      if (started) {
+        return;
+      }
+      started = true;
+      apply();
+    };
+    const onLoad = () => window.setTimeout(start, 200);
+    if (document.readyState === "complete") {
+      onLoad();
+    } else {
+      window.addEventListener("load", onLoad, { once: true });
+    }
+
     motion.addEventListener("change", apply);
-    return () => motion.removeEventListener("change", apply);
+    return () => {
+      window.removeEventListener("load", onLoad);
+      motion.removeEventListener("change", apply);
+    };
   }, []);
 
   return (
@@ -36,7 +55,7 @@ const HeroVideo = ({ className }: { className?: string }): ReactElement => {
       muted
       loop
       playsInline
-      preload="metadata"
+      preload="none"
       aria-hidden="true"
     >
       <source src="/media/vagues-royan.mp4" type="video/mp4" media="(max-width: 700px)" />

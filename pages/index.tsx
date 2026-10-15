@@ -73,15 +73,15 @@ export default function Home() {
         <div className={styles.veil} aria-hidden="true" />
         <div className={`container ${styles.heroInner}`}>
           <h1 id="hero-title" className={styles.heroTitle}>
-            <span className={`${styles.heroLine} rise`}>Cabinet de psychothérapie</span>{" "}
-            <span className={`${styles.heroSub} rise`} style={{ animationDelay: "120ms" }}>
+            <span className={`${styles.heroLine} lift`}>Cabinet de psychothérapie</span>{" "}
+            <span className={`${styles.heroSub} lift`} style={{ animationDelay: "120ms" }}>
               Gestalt thérapie
             </span>{" "}
-            <span className={`${styles.heroLine} rise`} style={{ animationDelay: "240ms" }}>
+            <span className={`${styles.heroLine} lift`} style={{ animationDelay: "240ms" }}>
               Royan
             </span>
           </h1>
-          <div className={`${styles.heroCtas} rise`} style={{ animationDelay: "360ms" }}>
+          <div className={`${styles.heroCtas} lift`} style={{ animationDelay: "360ms" }}>
             <Link href={APPOINTMENT_HREF} className="btn btn--light">
               Prendre rendez-vous
             </Link>

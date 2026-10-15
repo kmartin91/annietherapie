@@ -55,11 +55,17 @@
   color: var(--ink);
 }
 
+/* Le « logo » : Cormorant Garamond, nom en capitales pour son Q. */
 .name {
   font-family: var(--serif);
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
+}
+
+.surname {
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .tagline {

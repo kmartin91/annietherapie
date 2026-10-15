@@ -12,14 +12,23 @@ import "styles/globals.css";
 // du site d'origine, en semi-gras), texte courant en Figtree.
 const cormorant = Cormorant_Garamond({
   weight: ["500", "600"],
-  style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
+});
+
+// Italique : seulement pour la citation, chargé sans préchargement.
+const cormorantItalic = Cormorant_Garamond({
+  weight: "500",
+  style: "italic",
+  subsets: ["latin"],
+  display: "swap",
+  preload: false,
 });
 
 const figtree = Figtree({
   subsets: ["latin"],
   display: "swap",
+  preload: false,
 });
 
 const siteData = JSON.stringify(siteJsonLd()).replace(/</g, "\\u003c");
@@ -34,6 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <style jsx global>{`
         :root {
           --font-cormorant: ${cormorant.style.fontFamily};
+          --font-cormorant-italic: ${cormorantItalic.style.fontFamily};
           --font-figtree: ${figtree.style.fontFamily};
         }
       `}</style>

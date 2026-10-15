@@ -53,7 +53,9 @@ const Header = (): ReactElement => {
     <header className={`${styles.header} ${overlay ? styles.overlay : ""}`}>
       <div className={`container ${styles.inner}`}>
         <Link href="/" className={styles.brand} aria-label="Annie Maquet, psychopraticienne à Royan : accueil">
-          <span className={styles.name}>Annie Maquet</span>
+          <span className={styles.name}>
+            Annie <span className={styles.surname}>Maquet</span>
+          </span>
           <span className={styles.tagline}>
             Psychopraticienne<span className={styles.taglineLong}> · Gestalt thérapie</span> · Royan
           </span>

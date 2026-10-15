@@ -16,10 +16,8 @@ const Hours = ({ compact = false }: { compact?: boolean }): ReactElement => {
   if (compact) {
     return (
       <dl className={styles.list}>
-        <dt className={styles.day}>Lundi au mercredi</dt>
+        <dt className={styles.day}>Lundi au jeudi</dt>
         <dd className={styles.hours}>{OPENING_HOURS[0].hours}</dd>
-        <dt className={styles.day}>Jeudi</dt>
-        <dd className={styles.hours}>{OPENING_HOURS[3].hours}</dd>
         <dt className={`${styles.day} ${styles.closed}`}>Vendredi au dimanche</dt>
         <dd className={`${styles.hours} ${styles.closed}`}>fermé</dd>
       </dl>

@@ -20,10 +20,15 @@
 
 .name {
   font-family: var(--serif);
-  font-size: 26px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 500;
   line-height: 1;
   color: var(--ink);
+}
+
+.surname {
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .links {

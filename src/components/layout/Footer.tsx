@@ -13,7 +13,9 @@ const Footer = (): ReactElement => {
     <footer className={styles.footer}>
       <div className={`container ${styles.grid}`}>
         <div className={styles.about}>
-          <p className={styles.name}>{PRACTITIONER.name}</p>
+          <p className={styles.name}>
+            Annie <span className={styles.surname}>Maquet</span>
+          </p>
           <p>
             {PRACTITIONER.title} en {PRACTITIONER.approach}
             <br />
@@ -32,9 +34,7 @@ const Footer = (): ReactElement => {
         <div className={styles.hours}>
           <p className={styles.hoursTitle}>Horaires</p>
           <p>
-            Lundi au mercredi · {openDays[0].hours}
-            <br />
-            Jeudi · {openDays[3].hours}
+            Lundi au jeudi · {openDays[0].hours}
             <br />
             Sur rendez-vous
           </p>

@@ -40,7 +40,7 @@ export const OPENING_HOURS = [
   { day: 1, label: "Lundi", hours: "10 h – 19 h", opens: "10:00", closes: "19:00" },
   { day: 2, label: "Mardi", hours: "10 h – 19 h", opens: "10:00", closes: "19:00" },
   { day: 3, label: "Mercredi", hours: "10 h – 19 h", opens: "10:00", closes: "19:00" },
-  { day: 4, label: "Jeudi", hours: "13 h – 19 h", opens: "13:00", closes: "19:00" },
+  { day: 4, label: "Jeudi", hours: "10 h – 19 h", opens: "10:00", closes: "19:00" },
   { day: 5, label: "Vendredi", hours: null, opens: null, closes: null },
   { day: 6, label: "Samedi", hours: null, opens: null, closes: null },
   { day: 0, label: "Dimanche", hours: null, opens: null, closes: null },

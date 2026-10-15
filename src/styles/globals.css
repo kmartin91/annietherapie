@@ -334,8 +334,21 @@ html.menu-open body {
   animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
+/* Variante sans fondu : le texte est visible tout de suite (le hero est
+   l'élément mesuré par le LCP). */
+@keyframes lift {
+  from {
+    transform: translateY(14px);
+  }
+}
+
+.lift {
+  animation: lift 1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .rise {
+  .rise,
+  .lift {
     animation: none;
   }
 

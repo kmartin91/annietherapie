@@ -53,11 +53,22 @@ export const siteJsonLd = (): JsonLdNode => ({
         longitude: ADDRESS.geo.longitude,
       },
       areaServed: NEARBY_TOWNS.map((town) => ({ "@type": "City", name: town })),
-      openingHoursSpecification: OPENING_HOURS.filter((day) => day.opens).map((day) => ({
+      // Un créneau par plage horaire, avec les jours qui la partagent.
+      openingHoursSpecification: Object.values(
+        OPENING_HOURS.filter((day) => day.opens).reduce<Record<string, { opens: string; closes: string; days: string[] }>>(
+          (slots, day) => {
+            const key = `${day.opens}-${day.closes}`;
+            slots[key] = slots[key] || { opens: day.opens as string, closes: day.closes as string, days: [] };
+            slots[key].days.push(DAY_NAMES[day.day]);
+            return slots;
+          },
+          {},
+        ),
+      ).map((slot) => ({
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: DAY_NAMES[day.day],
-        opens: day.opens,
-        closes: day.closes,
+        dayOfWeek: slot.days,
+        opens: slot.opens,
+        closes: slot.closes,
       })),
       founder: { "@id": PERSON_ID },
       sameAs: ["https://www.annuaire-therapeutes.com/therapeute/180593-annie-maquet-royan"],
