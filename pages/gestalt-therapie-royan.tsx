@@ -117,9 +117,8 @@ export default function Gestalt() {
             <div className={styles.block}>
               <h2 className="title-m">Le corps comme allié</h2>
               <p className="body-l">
-                La Gestalt est une thérapie psychocorporelle. En séance, j’utilise souvent des médias créatifs, et le
-                corps est mis en mouvement : les expériences s’ancrent alors plus profondément qu’en passant uniquement
-                par la parole. Danseuse et sportive, c’est une dimension à laquelle je tiens particulièrement.
+                La Gestalt est une thérapie psychocorporelle. En séance, j’utilise parfois des médias créatifs : les
+                expériences s’ancrent alors plus profondément qu’en passant uniquement par la parole.
               </p>
               <p className="body-l">Ces propositions restent toujours des invitations. Vous gardez la liberté d’en faire ce qui vous convient.</p>
             </div>
