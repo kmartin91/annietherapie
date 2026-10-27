@@ -31,8 +31,6 @@ const REASONS = [
 ];
 
 const PATH_STEPS = [
-  { title: "Infirmière", text: "Premier métier, en Île-de-France" },
-  { title: "Danse et pratiques psychocorporelles", text: "Le corps comme porte d’entrée" },
   { title: "Gestalt praticienne certifiée", text: "Formation à l’IFFP" },
   { title: "Supervision et formation continue", text: "Pour garder un regard ouvert et critique sur ma pratique" },
 ];
@@ -190,8 +188,8 @@ export default function Home() {
             </p>
             <ul className={styles.points}>
               <li>
-                <strong>La parole, et le corps.</strong> J’utilise souvent des médias créatifs et je mets le corps en
-                mouvement : les expériences s’ancrent plus profondément qu’en passant par le mental seul.
+                <strong>La parole, et la créativité.</strong> J’utilise parfois des médias créatifs : les expériences
+                s’ancrent plus profondément qu’en passant par le mental seul.
               </li>
               <li>
                 <strong>À votre rythme.</strong> Au fil des séances, nous cheminons à travers les mots déposés et les
@@ -263,10 +261,6 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <p className={styles.notice}>
-            La thérapie ne remplace pas un suivi médical. En cas d’urgence, appelez le 15 ; en cas de pensées
-            suicidaires, le 3114 répond jour et nuit.
-          </p>
         </div>
       </section>
 

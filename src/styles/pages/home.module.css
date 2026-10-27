@@ -385,13 +385,6 @@
   background: var(--teal);
 }
 
-.notice {
-  max-width: 820px;
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--muted);
-}
-
 /* ---- Qui suis-je ---- */
 
 .portrait {
